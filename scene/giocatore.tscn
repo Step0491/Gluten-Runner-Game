@@ -1,0 +1,80 @@
+[gd_scene load_steps=11 format=3 uid="uid://dxqs6kho5u4rt"]
+
+[ext_resource type="Script" uid="uid://d2g268ei5pbe6" path="res://script/giocatore.gd" id="1_seukn"]
+[ext_resource type="PackedScene" uid="uid://bbayhcgtq0si2" path="res://scene/Beach Character.glb" id="3_36hvi"]
+[ext_resource type="PackedScene" uid="uid://cuphavb61y62u" path="res://scene/barravita.tscn" id="3_iqwog"]
+[ext_resource type="AudioStream" uid="uid://ml4am335vqpo" path="res://Music/land2-43790.ogg" id="4_36hvi"]
+[ext_resource type="AudioStream" uid="uid://cg404ticoduq7" path="res://Music/slap-hurt-pain-sound-effect-262618.ogg" id="5_36hvi"]
+[ext_resource type="AudioStream" uid="uid://d2vou4m3apbm7" path="res://Music/eat-323883.ogg" id="6_36hvi"]
+[ext_resource type="PackedScene" uid="uid://6o2sjb8vlsx2" path="res://scene/chicken.glb" id="7_1bgqo"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_titnh"]
+height = 1.40137
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_s53db"]
+size = Vector3(2.2002, 3.84369, 3.71143)
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_o00ko"]
+viewport_path = NodePath("SubViewport")
+
+[node name="Giocatore" type="CharacterBody3D"]
+transform = Transform3D(2.26, 0, 0, 0, 2.26, 0, 0, 0, 2.26, 0, 0, 0)
+script = ExtResource("1_seukn")
+
+[node name="CollisionShapehuman" type="CollisionShape3D" parent="."]
+transform = Transform3D(-2.88, 5.12552e-07, -4.56762e-07, 2.75658e-07, 5.355, 1.05894e-13, 4.34868e-07, 1.10066e-13, -3.025, 0, -0.353, -0.146536)
+shape = SubResource("CylinderShape3D_titnh")
+
+[node name="CollisionShapepollo" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.93161, 0.156982)
+visible = false
+shape = SubResource("BoxShape3D_s53db")
+
+[node name="kid" parent="." instance=ExtResource("3_36hvi")]
+transform = Transform3D(-4, -3.58552e-16, -6.03983e-07, -3.58553e-16, 4, 3.33067e-15, 6.03983e-07, 3.33067e-15, -4, 0.183494, -3.99118, 0.4375)
+
+[node name="Area3D" type="Area3D" parent="."]
+transform = Transform3D(-1.01, 0, -8.8297e-08, 0, 1.01, 0, 8.8297e-08, 0, -1.01, 0, 0, 0)
+collision_mask = 10
+
+[node name="CollisionShapepollo2" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(-1.035, 0, 1.56281e-07, 0, 1.035, 0, -1.56281e-07, 0, -1.035, 1.3588e-08, 1.91249, -0.155428)
+visible = false
+shape = SubResource("BoxShape3D_s53db")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(2.956, -5.26143e-07, 1.97458e-07, 2.82932e-07, 5.497, 1.0873e-13, -1.87922e-07, -1.58982e-13, 3.106, -1.26838e-08, -0.349505, 0.145085)
+shape = SubResource("CylinderShape3D_titnh")
+
+[node name="SubViewport" type="SubViewport" parent="."]
+disable_3d = true
+transparent_bg = true
+anisotropic_filtering_level = 2
+
+[node name="ProgressBar" parent="SubViewport" instance=ExtResource("3_iqwog")]
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(0.7, -4.65661e-10, -4.9738e-14, 4.65661e-10, 0.7, 1.94289e-16, -7.10543e-15, 2.77556e-17, 0.7, 0.0701328, 4.10998, -0.00197337)
+billboard = 1
+texture = SubResource("ViewportTexture_o00ko")
+
+[node name="JumpAudio" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("4_36hvi")
+volume_db = 12.191
+bus = &"SfxVol"
+
+[node name="DamageAudio" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("5_36hvi")
+volume_db = 12.396
+bus = &"SfxVol"
+
+[node name="LifeAudio" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("6_36hvi")
+volume_db = 12.191
+bus = &"SfxVol"
+
+[node name="chicken2" parent="." instance=ExtResource("7_1bgqo")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, -4.11562, 0)
+visible = false
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]

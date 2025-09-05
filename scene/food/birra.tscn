@@ -1,0 +1,58 @@
+[gd_scene load_steps=7 format=3 uid="uid://dqk00uexkomqt"]
+
+[ext_resource type="Script" uid="uid://cubyviji2glxu" path="res://script/food.gd" id="1_wohjk"]
+[ext_resource type="PackedScene" uid="uid://b580e5rmhvysn" path="res://kitchen food gltf/beer.glb" id="2_wohjk"]
+[ext_resource type="PackedScene" uid="uid://b48mvbd6el3ya" path="res://scene/food_name_label.tscn" id="3_jwdnr"]
+[ext_resource type="Script" uid="uid://dclanam368oty" path="res://script/food_name_label.gd" id="4_3lbfs"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_fj66j"]
+height = 0.252441
+radius = 0.104004
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_2ja5l"]
+viewport_path = NodePath("SubViewport")
+
+[node name="beer" type="Node3D"]
+script = ExtResource("1_wohjk")
+
+[node name="StaticBody3D2" type="StaticBody3D" parent="."]
+collision_layer = 2
+
+[node name="beer" parent="StaticBody3D2" instance=ExtResource("2_wohjk")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00795756, -0.0263622, 0.0231349)
+shape = SubResource("CylinderShape3D_fj66j")
+
+[node name="Area3D" type="Area3D" parent="StaticBody3D2"]
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="StaticBody3D2/Area3D"]
+transform = Transform3D(1.04, 0, 0, 0, 1.04, 0, 0, 0, 1.04, 0.00795756, -0.0263622, 0.0231349)
+shape = SubResource("CylinderShape3D_fj66j")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="StaticBody3D2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00616884, -0.2007, 0.0132561)
+light_color = Color(0.839216, 0, 0, 1)
+light_energy = 2.172
+omni_range = 0.327
+omni_attenuation = 0.025
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(0.185, -1.07102e-10, 1.87786e-15, 1.23068e-10, 0.161, -7.3354e-18, -1.87786e-15, 6.38378e-18, 0.185, -0.0222753, 0.251759, 0.0472934)
+billboard = 1
+texture = SubResource("ViewportTexture_2ja5l")
+
+[node name="SubViewport" type="SubViewport" parent="."]
+disable_3d = true
+transparent_bg = true
+anisotropic_filtering_level = 2
+size_2d_override = Vector2i(336, -256)
+
+[node name="Button" parent="SubViewport" instance=ExtResource("3_jwdnr")]
+offset_left = 32.0
+offset_top = 344.0
+offset_right = 176.0
+offset_bottom = 424.0
+script = ExtResource("4_3lbfs")
+
+[connection signal="body_entered" from="StaticBody3D2/Area3D" to="." method="_on_area_3d_body_entered"]

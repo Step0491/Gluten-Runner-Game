@@ -1,0 +1,103 @@
+[gd_scene load_steps=10 format=3 uid="uid://b0geflfdxqumi"]
+
+[ext_resource type="Script" uid="uid://cubyviji2glxu" path="res://script/food.gd" id="1_a5ly7"]
+[ext_resource type="PackedScene" uid="uid://cuiohac573cbc" path="res://Documentazione/Food Pack - Oct 2019/Sushi_Nigiri1.fbx" id="2_r2n1r"]
+[ext_resource type="PackedScene" uid="uid://cwj00js3pjcow" path="res://Documentazione/Food Pack - Oct 2019/Sushi_Roll2.fbx" id="3_faowv"]
+[ext_resource type="PackedScene" uid="uid://b5w7v8nayfbgj" path="res://Documentazione/Food Pack - Oct 2019/Sashimi_Salmon.fbx" id="4_aqakn"]
+[ext_resource type="PackedScene" uid="uid://df7dneg4m1r3x" path="res://kitchen gltf items/cuttingboard.gltf" id="5_gdeny"]
+[ext_resource type="PackedScene" uid="uid://b48mvbd6el3ya" path="res://scene/food_name_label.tscn" id="6_aqakn"]
+[ext_resource type="Script" uid="uid://dclanam368oty" path="res://script/food_name_label.gd" id="7_gdeny"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_xlju3"]
+size = Vector3(1.52563, 0.315384, 1.03027)
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_3mcr8"]
+viewport_path = NodePath("SubViewport")
+
+[node name="sushi" type="Node3D"]
+script = ExtResource("1_a5ly7")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+collision_layer = 8
+
+[node name="Sushi_Nigiri1" parent="StaticBody3D" instance=ExtResource("2_r2n1r")]
+transform = Transform3D(0.497849, -8.85343e-10, 0.0463243, 0.0141665, 0.476046, -0.152248, -0.044105, 0.152906, 0.473998, -0.391724, 0.0366654, 0.238718)
+
+[node name="Sushi_Nigiri4" parent="StaticBody3D" instance=ExtResource("2_r2n1r")]
+transform = Transform3D(0.221809, 3.54137e-09, -0.448108, -0.137037, 0.476046, -0.0678318, 0.42664, 0.152906, 0.211183, -0.112495, 0.122057, -0.0271343)
+
+[node name="Sushi_Nigiri2" parent="StaticBody3D" instance=ExtResource("2_r2n1r")]
+transform = Transform3D(0.496883, -1.15606e-09, -0.0557432, -0.0170469, 0.476046, -0.151953, 0.0530726, 0.152906, 0.473078, -0.391724, 0.104242, 0.0283311)
+
+[node name="Sushi_Nigiri3" parent="StaticBody3D" instance=ExtResource("2_r2n1r")]
+transform = Transform3D(0.490077, 0, -0.0991195, -0.0303119, 0.476046, -0.149871, 0.0943709, 0.152906, 0.466598, -0.391724, 0.182261, -0.214569)
+
+[node name="Sushi_Roll2" parent="StaticBody3D" instance=ExtResource("3_faowv")]
+transform = Transform3D(0.5, 0, 0, 0, 0.476046, -0.152906, 0, 0.152906, 0.476046, -0.0890328, 0.251035, -0.284168)
+
+[node name="Sushi_Roll3" parent="StaticBody3D" instance=ExtResource("3_faowv")]
+transform = Transform3D(0.5, 0, 0, 0, 0.476046, -0.152906, 0, 0.152906, 0.476046, 0.287951, 0.230132, -0.219091)
+
+[node name="Sushi_Roll4" parent="StaticBody3D" instance=ExtResource("3_faowv")]
+transform = Transform3D(0.5, 0, 0, 0, 0.476046, -0.152906, 0, 0.152906, 0.476046, 0.088581, 0.187953, -0.0877723)
+
+[node name="Sushi_Roll5" parent="StaticBody3D" instance=ExtResource("3_faowv")]
+transform = Transform3D(-2.18557e-08, -0.5, 0, 0.476046, -2.08086e-08, -0.152906, 0.152906, -6.68373e-09, 0.476046, 0.176778, 0.276426, -0.258536)
+
+[node name="Sushi_Roll6" parent="StaticBody3D" instance=ExtResource("3_faowv")]
+transform = Transform3D(0.353553, -0.353553, 0, 0.336615, 0.336615, -0.152906, 0.108121, 0.108121, 0.476046, 0.0883894, 0.273884, -0.252814)
+
+[node name="Sashimi_Salmon" parent="StaticBody3D" instance=ExtResource("4_aqakn")]
+transform = Transform3D(0.5, 0, 0, 0, 0.476046, -0.152906, 0, 0.152906, 0.476046, 0.383689, 0.159903, 0.00612111)
+
+[node name="Sashimi_Salmon2" parent="StaticBody3D" instance=ExtResource("4_aqakn")]
+transform = Transform3D(0.4984, 1.15606e-09, 0.039969, 0.012223, 0.476046, -0.152417, -0.0380542, 0.152906, 0.474523, 0.39976, 0.107071, 0.170605)
+
+[node name="Sashimi_Salmon3" parent="StaticBody3D" instance=ExtResource("4_aqakn")]
+transform = Transform3D(0.270524, 2.45849e-09, 0.420496, 0.128593, 0.476046, -0.0827294, -0.400351, 0.152906, 0.257564, 0.0522299, 0.100928, 0.189731)
+
+[node name="Sashimi_Salmon4" parent="StaticBody3D" instance=ExtResource("4_aqakn")]
+transform = Transform3D(-0.394815, -7.08274e-09, 0.306791, 0.0938203, 0.476046, 0.120739, -0.292093, 0.152906, -0.3759, 0.524308, 0.239151, -0.240604)
+
+[node name="Sashimi_Salmon5" parent="StaticBody3D" instance=ExtResource("4_aqakn")]
+transform = Transform3D(-0.394815, -7.08274e-09, 0.306791, 0.0938203, 0.476046, 0.120739, -0.292093, 0.152906, -0.3759, 0.524308, 0.239151, -0.240604)
+
+[node name="cuttingboard2" parent="StaticBody3D" instance=ExtResource("5_gdeny")]
+transform = Transform3D(1, 0, 0, 0, 0.952092, -0.305812, 0, 0.305812, 0.952092, 0, -0.0160557, -0.0503969)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 0.952092, -0.305812, 0, 0.305812, 0.952092, 0, 0.119219, -0.00694653)
+shape = SubResource("BoxShape3D_xlju3")
+
+[node name="Area3D" type="Area3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 0.952092, -0.305812, 0, 0.305812, 0.952092, 0, -0.0160557, -0.0503969)
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="StaticBody3D/Area3D"]
+transform = Transform3D(1.04, 0, 0, 0, 1.04, 0, 0, 0, 1.04, 0, 0.142082, 0)
+shape = SubResource("BoxShape3D_xlju3")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 4.64917e-08, 0, -4.64917e-08, 1, 0.00101364, -0.244889, 0.115137)
+light_color = Color(0.839216, 0.839216, 0.313726, 1)
+omni_range = 0.951851
+omni_attenuation = 1.2
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(0.415, -2.39483e-10, 4.21251e-15, 2.7607e-10, 0.36, -1.64551e-17, -4.21251e-15, 1.42743e-17, 0.415, -0.0171887, 0.620233, -0.00197337)
+billboard = 1
+texture = SubResource("ViewportTexture_3mcr8")
+
+[node name="SubViewport" type="SubViewport" parent="."]
+disable_3d = true
+transparent_bg = true
+anisotropic_filtering_level = 2
+size_2d_override = Vector2i(336, -256)
+
+[node name="Button" parent="SubViewport" instance=ExtResource("6_aqakn")]
+offset_left = 32.0
+offset_top = 344.0
+offset_right = 176.0
+offset_bottom = 424.0
+script = ExtResource("7_gdeny")
+
+[connection signal="body_entered" from="StaticBody3D/Area3D" to="." method="_on_area_3d_body_entered"]

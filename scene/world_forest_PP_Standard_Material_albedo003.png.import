@@ -1,0 +1,39 @@
+[remap]
+
+importer="texture"
+type="CompressedTexture2D"
+uid="uid://b0e1ju2ieql5b"
+path.s3tc="res://.godot/imported/world_forest_PP_Standard_Material_albedo003.png-e55a72f0aa6eb7cac100c39112c4e6d5.s3tc.ctex"
+path.etc2="res://.godot/imported/world_forest_PP_Standard_Material_albedo003.png-e55a72f0aa6eb7cac100c39112c4e6d5.etc2.ctex"
+metadata={
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
+"vram_texture": true
+}
+generator_parameters={
+"md5": "ee43de12bc13a4272f8816e6308422ef"
+}
+
+[deps]
+
+source_file="res://scene/world_forest_PP_Standard_Material_albedo003.png"
+dest_files=["res://.godot/imported/world_forest_PP_Standard_Material_albedo003.png-e55a72f0aa6eb7cac100c39112c4e6d5.s3tc.ctex", "res://.godot/imported/world_forest_PP_Standard_Material_albedo003.png-e55a72f0aa6eb7cac100c39112c4e6d5.etc2.ctex"]
+
+[params]
+
+compress/mode=2
+compress/high_quality=false
+compress/lossy_quality=0.7
+compress/hdr_compression=1
+compress/normal_map=0
+compress/channel_pack=0
+mipmaps/generate=true
+mipmaps/limit=-1
+roughness/mode=0
+roughness/src_normal=""
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/normal_map_invert_y=false
+process/hdr_as_srgb=false
+process/hdr_clamp_exposure=false
+process/size_limit=0
+detect_3d/compress_to=0

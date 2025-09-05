@@ -1,0 +1,58 @@
+[gd_scene load_steps=7 format=3 uid="uid://d2c10hh3nb8hp"]
+
+[ext_resource type="Script" uid="uid://cubyviji2glxu" path="res://script/food.gd" id="1_scrtn"]
+[ext_resource type="PackedScene" uid="uid://dklxs3ts48v7m" path="res://Documentazione/Food Pack - Oct 2019/Fries.fbx" id="2_mkgga"]
+[ext_resource type="PackedScene" uid="uid://b48mvbd6el3ya" path="res://scene/food_name_label.tscn" id="3_t2t3b"]
+[ext_resource type="Script" uid="uid://dclanam368oty" path="res://script/food_name_label.gd" id="4_3lqkp"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_hepeg"]
+size = Vector3(0.0974121, 0.139221, 0.0637207)
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_ve31e"]
+viewport_path = NodePath("SubViewport")
+
+[node name="patatine" type="Node3D"]
+script = ExtResource("1_scrtn")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+collision_layer = 8
+
+[node name="Fries" parent="StaticBody3D" instance=ExtResource("2_mkgga")]
+transform = Transform3D(-0.1, 6.49349e-16, -8.74228e-09, 7.89019e-09, 0.0430621, -0.0902533, 3.76461e-09, -0.0902533, -0.0430621, 0, -0.00669954, 0.0188141)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 0.902533, -0.430621, 0, 0.430621, 0.902533, 0, 0.0246963, 0.00281327)
+shape = SubResource("BoxShape3D_hepeg")
+
+[node name="Area3D" type="Area3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 0.902533, -0.430621, 0, 0.430621, 0.902533, 0, 0.0034487, -0.00245542)
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="StaticBody3D/Area3D"]
+transform = Transform3D(1.04, 0, 0, 0, 1.04, 0, 0, 0, 1.04, 0, 0.0214455, -0.00439453)
+shape = SubResource("BoxShape3D_hepeg")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.000974655, -0.0654512, -0.00442352)
+light_color = Color(0.839216, 0.839216, 0.313726, 1)
+omni_range = 0.951851
+omni_attenuation = 1.2
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(0.12, -6.91839e-11, 1.21807e-15, 7.98276e-11, 0.104, -4.7581e-18, -1.21807e-15, 4.12369e-18, 0.12, -0.017189, 0.168721, -0.00197337)
+billboard = 1
+texture = SubResource("ViewportTexture_ve31e")
+
+[node name="SubViewport" type="SubViewport" parent="."]
+disable_3d = true
+transparent_bg = true
+anisotropic_filtering_level = 2
+size_2d_override = Vector2i(336, -256)
+
+[node name="Button" parent="SubViewport" instance=ExtResource("3_t2t3b")]
+offset_left = 32.0
+offset_top = 344.0
+offset_right = 176.0
+offset_bottom = 424.0
+script = ExtResource("4_3lqkp")
+
+[connection signal="body_entered" from="StaticBody3D/Area3D" to="." method="_on_area_3d_body_entered"]

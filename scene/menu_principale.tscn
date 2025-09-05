@@ -1,0 +1,809 @@
+[gd_scene load_steps=41 format=3 uid="uid://bqqyxsg5ruas7"]
+
+[ext_resource type="Script" uid="uid://dlphdji8xi84i" path="res://script/menu_principale.gd" id="1_6ob8s"]
+[ext_resource type="Texture2D" uid="uid://wjbr8rl8ams0" path="res://materials/Progetto senza titolo (1).png" id="1_xhhi6"]
+[ext_resource type="FontFile" uid="uid://bjmfgovkx7cju" path="res://materials/SuperLobster.ttf" id="2_6ob8s"]
+[ext_resource type="FontFile" uid="uid://dbov3l412oum1" path="res://materials/Super Lobster.ttf" id="3_naq42"]
+[ext_resource type="PackedScene" uid="uid://cgor1opkcsnqw" path="res://scene/options_menu.tscn" id="5_naq42"]
+[ext_resource type="Texture2D" uid="uid://bqdi4r03efm15" path="res://materials/40e4425fc69645b70fbe78a1d814ee93-removebg-preview.png" id="5_seno8"]
+[ext_resource type="AudioStream" uid="uid://s48a7nbrlqx" path="res://Music/Feast-Dash.ogg" id="6_4qw8r"]
+[ext_resource type="PackedScene" uid="uid://r0rtan8shqgb" path="res://scene/credits_menu.tscn" id="8_elgs4"]
+[ext_resource type="PackedScene" uid="uid://ei0gt35qrh21" path="res://scene/levels_menu.tscn" id="8_v33tj"]
+[ext_resource type="PackedScene" uid="uid://cw1dke1gw4ohg" path="res://scene/profile_menu.tscn" id="9_6aw75"]
+[ext_resource type="PackedScene" uid="uid://dhkqa5wynpbnu" path="res://scene/new_name.tscn" id="10_omdi7"]
+[ext_resource type="Texture2D" uid="uid://bjye3tlqa7gty" path="res://materials/glutenbot.png" id="12_egqni"]
+[ext_resource type="Texture2D" uid="uid://bnfsn68nl8n8p" path="res://materials/IA popup.png" id="13_3j4vj"]
+[ext_resource type="Script" uid="uid://b57l2fum8mgbl" path="res://script/texture_rect_3.gd" id="14_osjrv"]
+[ext_resource type="Shader" uid="uid://cj5tnymn7ogra" path="res://materials/pausemenu.gdshader" id="15_osjrv"]
+
+[sub_resource type="Animation" id="Animation_6aw75"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate:r")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:modulate:g")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:modulate:b")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".:modulate:a")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="Animation" id="Animation_elgs4"]
+resource_name = "dark_menu"
+length = 0.3
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate:r")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.3)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:modulate:g")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.3)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:modulate:b")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.3)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".:modulate:a")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.3)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_omdi7"]
+_data = {
+&"RESET": SubResource("Animation_6aw75"),
+&"dark_menu": SubResource("Animation_elgs4")
+}
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_v33tj"]
+texture = ExtResource("5_seno8")
+region_rect = Rect2(295, 150, 253, 79)
+modulate_color = Color(0.776471, 0.776471, 0.776471, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_yt5ys"]
+texture = ExtResource("5_seno8")
+region_rect = Rect2(295, 150, 253, 79)
+modulate_color = Color(0.611765, 0.611765, 0.611765, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_elgs4"]
+texture = ExtResource("5_seno8")
+region_rect = Rect2(295, 149.78, 253, 79.25)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_omdi7"]
+texture = ExtResource("5_seno8")
+region_rect = Rect2(295, 150, 253, 79)
+modulate_color = Color(0.619608, 0.619608, 0.619608, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3j4vj"]
+texture = ExtResource("5_seno8")
+region_rect = Rect2(295, 150, 253, 79)
+modulate_color = Color(0.611765, 0.611765, 0.611765, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_egqni"]
+texture = ExtResource("5_seno8")
+region_rect = Rect2(295, 150, 253, 79)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_osjrv"]
+texture = ExtResource("5_seno8")
+region_rect = Rect2(295, 150, 253, 79)
+modulate_color = Color(0.776471, 0.776471, 0.776471, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ehkf3"]
+texture = ExtResource("5_seno8")
+region_rect = Rect2(295, 150, 253, 79)
+modulate_color = Color(0.611765, 0.611765, 0.611765, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3aua1"]
+texture = ExtResource("5_seno8")
+region_rect = Rect2(295, 150, 253, 79)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_seno8"]
+texture = ExtResource("5_seno8")
+region_rect = Rect2(295, 150, 253, 79)
+modulate_color = Color(0.619608, 0.619608, 0.619608, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1pp5s"]
+texture = ExtResource("5_seno8")
+region_rect = Rect2(295, 150, 253, 79)
+modulate_color = Color(0.611765, 0.611765, 0.611765, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_6aw75"]
+texture = ExtResource("5_seno8")
+region_rect = Rect2(295, 150, 253, 79)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_b8h26"]
+texture = ExtResource("5_seno8")
+region_rect = Rect2(295, 150, 253, 79)
+modulate_color = Color(0.611765, 0.611765, 0.611765, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2gl5t"]
+texture = ExtResource("5_seno8")
+region_rect = Rect2(295, 150, 253, 79)
+modulate_color = Color(0.611765, 0.611765, 0.611765, 1)
+
+[sub_resource type="Animation" id="Animation_fdqew"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:material:shader_parameter/lod")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1.31, -0.15, 0, 0.15, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ColorRect:modulate:r")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.15, 0, 0.15, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("ColorRect:modulate:g")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.15, 0, 0.15, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("ColorRect:modulate:b")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.15, 0, 0.15, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/4/type = "bezier"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("ColorRect:modulate:a")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.15, 0, 0.15, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/5/type = "bezier"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("TextureRect3:modulate:r")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.15, 0, 0.15, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/6/type = "bezier"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("TextureRect3:modulate:g")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.15, 0, 0.15, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/7/type = "bezier"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("TextureRect3:modulate:b")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.15, 0, 0.15, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/8/type = "bezier"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("TextureRect3:modulate:a")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.15, 0, 0.15, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/9/type = "bezier"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("TextureRect2:modulate:r")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.15, 0, 0.15, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/10/type = "bezier"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("TextureRect2:modulate:g")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.15, 0, 0.15, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/11/type = "bezier"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("TextureRect2:modulate:b")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.15, 0, 0.15, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/12/type = "bezier"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("TextureRect2:modulate:a")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.15, 0, 0.15, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="Animation" id="Animation_gn2wi"]
+resource_name = "blur"
+length = 0.3
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:material:shader_parameter/lod")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0, -0.15, 0, 0.15, 0, 1.31, -0.15, 0, 0.15, 0),
+"times": PackedFloat32Array(0, 0.3)
+}
+
+[sub_resource type="Animation" id="Animation_gjnwh"]
+resource_name = "visible"
+length = 0.3
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:modulate:r")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(1, -0.15, 0, 0.15, 0, 1, -0.15, 0, 0.15, 0),
+"times": PackedFloat32Array(0, 0.3)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ColorRect:modulate:g")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(1, -0.15, 0, 0.15, 0, 1, -0.15, 0, 0.15, 0),
+"times": PackedFloat32Array(0, 0.3)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("ColorRect:modulate:b")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(1, -0.15, 0, 0.15, 0, 1, -0.15, 0, 0.15, 0),
+"times": PackedFloat32Array(0, 0.3)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("ColorRect:modulate:a")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(1, -0.15, 0, 0.15, 0, 0, -0.15, 0, 0.15, 0),
+"times": PackedFloat32Array(0, 0.3)
+}
+tracks/4/type = "bezier"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("TextureRect3:modulate:r")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(1, -0.15, 0, 0.15, 0, 1, -0.15, 0, 0.15, 0),
+"times": PackedFloat32Array(0, 0.3)
+}
+tracks/5/type = "bezier"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("TextureRect3:modulate:g")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(1, -0.15, 0, 0.15, 0, 1, -0.15, 0, 0.15, 0),
+"times": PackedFloat32Array(0, 0.3)
+}
+tracks/6/type = "bezier"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("TextureRect3:modulate:b")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(1, -0.15, 0, 0.15, 0, 1, -0.15, 0, 0.15, 0),
+"times": PackedFloat32Array(0, 0.3)
+}
+tracks/7/type = "bezier"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("TextureRect3:modulate:a")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(1, -0.15, 0, 0.15, 0, 0, -0.15, 0, 0.15, 0),
+"times": PackedFloat32Array(0, 0.3)
+}
+tracks/8/type = "bezier"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("TextureRect2:modulate:r")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(1, -0.15, 0, 0.15, 0, 1, -0.15, 0, 0.15, 0),
+"times": PackedFloat32Array(0, 0.3)
+}
+tracks/9/type = "bezier"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("TextureRect2:modulate:g")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(1, -0.15, 0, 0.15, 0, 1, -0.15, 0, 0.15, 0),
+"times": PackedFloat32Array(0, 0.3)
+}
+tracks/10/type = "bezier"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("TextureRect2:modulate:b")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(1, -0.15, 0, 0.15, 0, 1, -0.15, 0, 0.15, 0),
+"times": PackedFloat32Array(0, 0.3)
+}
+tracks/11/type = "bezier"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("TextureRect2:modulate:a")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(1, -0.15, 0, 0.15, 0, 0, -0.15, 0, 0.15, 0),
+"times": PackedFloat32Array(0, 0.3)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_0d4pv"]
+_data = {
+&"RESET": SubResource("Animation_fdqew"),
+&"blur": SubResource("Animation_gn2wi"),
+&"visible": SubResource("Animation_gjnwh")
+}
+
+[sub_resource type="Animation" id="Animation_ehkf3"]
+resource_name = "moving"
+length = 2.0
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(17, -0.25, 0, 0.25, 0, 17, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 2)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(1080.93, -0.25, 0, 0.25, 0, 1123.81, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 2)
+}
+
+[sub_resource type="Animation" id="Animation_3aua1"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(17, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1064.54, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_1pp5s"]
+_data = {
+&"RESET": SubResource("Animation_3aua1"),
+&"moving": SubResource("Animation_ehkf3")
+}
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ehkf3"]
+shader = ExtResource("15_osjrv")
+shader_parameter/lod = 1.31
+
+[node name="Menu_principale" type="Control"]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_6ob8s")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_omdi7")
+}
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_xhhi6")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 12
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 125
+
+[node name="HSeparator" type="HSeparator" parent="MarginContainer/VBoxContainer"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(5, 0)
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 8
+theme_override_constants/shadow_offset_y = 8
+theme_override_constants/outline_size = 15
+theme_override_constants/shadow_outline_size = 5
+theme_override_fonts/font = ExtResource("2_6ob8s")
+theme_override_font_sizes/font_size = 90
+text = "Gluten Runner"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 40
+alignment = 1
+
+[node name="Start_Button" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(314.31, 81.07)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/outline_size = 6
+theme_override_fonts/font = ExtResource("3_naq42")
+theme_override_font_sizes/font_size = 45
+theme_override_styles/hover = SubResource("StyleBoxTexture_v33tj")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_yt5ys")
+theme_override_styles/normal = SubResource("StyleBoxTexture_elgs4")
+action_mode = 0
+text = "GIOCA"
+
+[node name="Levels" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(314.31, 81.07)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/outline_size = 6
+theme_override_fonts/font = ExtResource("3_naq42")
+theme_override_font_sizes/font_size = 45
+theme_override_styles/hover = SubResource("StyleBoxTexture_omdi7")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_3j4vj")
+theme_override_styles/normal = SubResource("StyleBoxTexture_egqni")
+action_mode = 0
+text = "LIVELLI"
+
+[node name="Profilo" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(314.31, 81.07)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/outline_size = 6
+theme_override_fonts/font = ExtResource("3_naq42")
+theme_override_font_sizes/font_size = 45
+theme_override_styles/hover = SubResource("StyleBoxTexture_osjrv")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_ehkf3")
+theme_override_styles/normal = SubResource("StyleBoxTexture_3aua1")
+text = "PROFILO"
+
+[node name="Separator2" type="Control" parent="MarginContainer/HBoxContainer/VBoxContainer/Profilo"]
+custom_minimum_size = Vector2(0, 179.1)
+layout_mode = 3
+anchors_preset = 0
+
+[node name="Option_Button" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(314.31, 81.07)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/outline_size = 6
+theme_override_fonts/font = ExtResource("3_naq42")
+theme_override_font_sizes/font_size = 45
+theme_override_styles/hover = SubResource("StyleBoxTexture_seno8")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_1pp5s")
+theme_override_styles/normal = SubResource("StyleBoxTexture_6aw75")
+action_mode = 0
+text = "OPZIONI"
+
+[node name="Credits" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(314.31, 81.07)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/outline_size = 6
+theme_override_fonts/font = ExtResource("3_naq42")
+theme_override_font_sizes/font_size = 45
+theme_override_styles/hover = SubResource("StyleBoxTexture_omdi7")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_b8h26")
+theme_override_styles/normal = SubResource("StyleBoxTexture_egqni")
+action_mode = 0
+text = "CREDITI"
+
+[node name="Exit_Button" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(314.31, 81.07)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/outline_size = 6
+theme_override_fonts/font = ExtResource("3_naq42")
+theme_override_font_sizes/font_size = 45
+theme_override_styles/hover = SubResource("StyleBoxTexture_omdi7")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_2gl5t")
+theme_override_styles/normal = SubResource("StyleBoxTexture_egqni")
+action_mode = 0
+text = "ESCI"
+
+[node name="Options_Menu" parent="." instance=ExtResource("5_naq42")]
+visible = false
+layout_mode = 1
+
+[node name="Levels_menu" parent="." instance=ExtResource("8_v33tj")]
+visible = false
+layout_mode = 1
+
+[node name="Credits_Menu" parent="." instance=ExtResource("8_elgs4")]
+visible = false
+layout_mode = 1
+
+[node name="Profile_Menu" parent="." instance=ExtResource("9_6aw75")]
+visible = false
+layout_mode = 1
+
+[node name="NewName" parent="." instance=ExtResource("10_omdi7")]
+visible = false
+custom_minimum_size = Vector2(500, 700)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -360.0
+offset_top = -640.0
+offset_right = 360.0
+offset_bottom = 640.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MusicStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_4qw8r")
+autoplay = true
+bus = &"Musics"
+
+[node name="canvas" type="CanvasLayer" parent="."]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="canvas"]
+process_mode = 3
+libraries = {
+&"": SubResource("AnimationLibrary_0d4pv")
+}
+
+[node name="TextureRect2" type="TextureButton" parent="canvas"]
+offset_left = 171.0
+offset_top = 1047.0
+offset_right = 720.0
+offset_bottom = 1280.0
+texture_normal = ExtResource("12_egqni")
+texture_pressed = ExtResource("12_egqni")
+texture_hover = ExtResource("12_egqni")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="TextureRect3" type="TextureRect" parent="canvas"]
+offset_left = 17.0
+offset_top = 1080.93
+offset_right = 213.0
+offset_bottom = 1124.93
+texture = ExtResource("13_3j4vj")
+expand_mode = 1
+script = ExtResource("14_osjrv")
+
+[node name="Label" type="Label" parent="canvas/TextureRect3"]
+custom_minimum_size = Vector2(5, 0)
+layout_mode = 0
+offset_left = 13.0
+offset_top = 4.0
+offset_right = 188.0
+offset_bottom = 37.0
+size_flags_vertical = 0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 2
+theme_override_constants/outline_size = 4
+theme_override_constants/shadow_outline_size = 2
+theme_override_fonts/font = ExtResource("2_6ob8s")
+theme_override_font_sizes/font_size = 26
+text = "Chatta con l'IA"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="canvas/TextureRect3"]
+libraries = {
+&"": SubResource("AnimationLibrary_1pp5s")
+}
+
+[node name="ColorRect" type="ColorRect" parent="canvas"]
+material = SubResource("ShaderMaterial_ehkf3")
+custom_minimum_size = Vector2(68, 72)
+offset_top = 1010.0
+offset_right = 720.0
+offset_bottom = 1280.0
+color = Color(1, 1, 1, 0)
+
+[connection signal="exit_option_menu" from="Options_Menu" to="." method="_on_options_menu_exit_option_menu"]
+[connection signal="exit" from="Levels_menu" to="." method="_on_levels_menu_exit"]
+[connection signal="exit" from="Credits_Menu" to="." method="_on_credits_menu_exit"]
+[connection signal="exit" from="Profile_Menu" to="." method="_on_profile_menu_exit"]
+[connection signal="mouse_entered" from="canvas/TextureRect2" to="." method="_on_texture_rect_2_mouse_entered"]
+[connection signal="mouse_exited" from="canvas/TextureRect2" to="." method="_on_texture_rect_2_mouse_exited"]
+[connection signal="pressed" from="canvas/TextureRect2" to="." method="_on_texture_rect_2_pressed"]
+[connection signal="gui_input" from="canvas/TextureRect3" to="." method="_on_texture_rect_3_gui_input"]
+[connection signal="mouse_entered" from="canvas/TextureRect3" to="." method="_on_texture_rect_3_mouse_entered"]
+[connection signal="mouse_exited" from="canvas/TextureRect3" to="." method="_on_texture_rect_3_mouse_exited"]

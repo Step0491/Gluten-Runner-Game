@@ -1,0 +1,39 @@
+[gd_scene load_steps=3 format=3 uid="uid://b03qfc82irqql"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qek7s"]
+bg_color = Color(0.462291, 0.462291, 0.46229, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_i0rrv"]
+bg_color = Color(0.211765, 0.85098, 0.262745, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.211765, 0.85098, 0.262745, 1)
+border_blend = true
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+
+[node name="GameScore_bar" type="ProgressBar"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -166.5
+offset_top = -25.5
+offset_right = 166.5
+offset_bottom = 25.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/background = SubResource("StyleBoxFlat_qek7s")
+theme_override_styles/fill = SubResource("StyleBoxFlat_i0rrv")
+show_percentage = false

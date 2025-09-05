@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://jj7t7yo7o7i"]
+
+[ext_resource type="Texture2D" uid="uid://dx3dlg74o15j1" path="res://materials/sentiero2.png" id="1_01q1h"]
+
+[resource]
+albedo_texture = ExtResource("1_01q1h")
+uv1_scale = Vector3(15.3, 17.66, 7.885)
+uv1_offset = Vector3(2.74, 0.42, 0)

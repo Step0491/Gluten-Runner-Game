@@ -1,0 +1,93 @@
+[gd_scene load_steps=13 format=3 uid="uid://vhfwfsh7mnpa"]
+
+[ext_resource type="Script" uid="uid://cubyviji2glxu" path="res://script/food.gd" id="1_eck1k"]
+[ext_resource type="PackedScene" uid="uid://cx0cj22cayaei" path="res://kitchen gltf items/food_ingredient_tomato_slice.gltf" id="2_4r6f3"]
+[ext_resource type="PackedScene" uid="uid://cd1jggukr6run" path="res://kitchen gltf items/food_ingredient_onion_rings.gltf" id="3_420iw"]
+[ext_resource type="PackedScene" uid="uid://cf32g1yyrkjjn" path="res://kitchen gltf items/food_ingredient_lettuce_slice.gltf" id="4_d4nmc"]
+[ext_resource type="PackedScene" uid="uid://kmkocluvu51n" path="res://kitchen gltf items/food_ingredient_cheese_slice.gltf" id="5_455sg"]
+[ext_resource type="PackedScene" uid="uid://dr3teuq12mi6e" path="res://kitchen gltf items/food_ingredient_bun_top.gltf" id="6_3xjo1"]
+[ext_resource type="PackedScene" uid="uid://df43hpi5fw4iu" path="res://kitchen gltf items/food_ingredient_burger_cooked.gltf" id="7_wtftt"]
+[ext_resource type="PackedScene" uid="uid://8ccitcpygejm" path="res://kitchen gltf items/food_ingredient_bun_bottom.gltf" id="8_cw5ss"]
+[ext_resource type="PackedScene" uid="uid://b48mvbd6el3ya" path="res://scene/food_name_label.tscn" id="9_d4nmc"]
+[ext_resource type="Script" uid="uid://dclanam368oty" path="res://script/food_name_label.gd" id="10_455sg"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_rso40"]
+size = Vector3(0.848633, 0.751907, 0.857422)
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_3xjo1"]
+viewport_path = NodePath("SubViewport")
+
+[node name="cheeseburger" type="Node3D"]
+script = ExtResource("1_eck1k")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+collision_layer = 2
+
+[node name="food_ingredient_tomato_slice2" parent="StaticBody3D" instance=ExtResource("2_4r6f3")]
+transform = Transform3D(0.465, 0, 0, 0, 0.465, 0, 0, 0, 0.465, -0.111694, 0.189852, -0.0895996)
+
+[node name="food_ingredient_tomato_slice3" parent="StaticBody3D" instance=ExtResource("2_4r6f3")]
+transform = Transform3D(0.465, 0, 0, 0, 0.465, 0, 0, 0, 0.465, -0.0593262, 0.189852, 0.191895)
+
+[node name="food_ingredient_tomato_slice4" parent="StaticBody3D" instance=ExtResource("2_4r6f3")]
+transform = Transform3D(0.465, 0, 0, 0, 0.465, 0, 0, 0, 0.465, 0.223755, 0.189852, -0.0166016)
+
+[node name="food_ingredient_onion_rings2" parent="StaticBody3D" instance=ExtResource("3_420iw")]
+transform = Transform3D(0.47, 0, 0, 0, 0.47, 0, 0, 0, 0.47, 0.0958252, 0.230492, 0.168823)
+
+[node name="food_ingredient_onion_rings3" parent="StaticBody3D" instance=ExtResource("3_420iw")]
+transform = Transform3D(0.47, 0, 0, 0, 0.47, 0, 0, 0, 0.47, 0.0784912, 0.230492, -0.117676)
+
+[node name="food_ingredient_onion_rings4" parent="StaticBody3D" instance=ExtResource("3_420iw")]
+transform = Transform3D(0.374592, 0, -0.283867, 0, 0.47, 0, 0.283867, 0, 0.374592, -0.172607, 0.230492, 0.0577393)
+
+[node name="food_ingredient_lettuce_slice2" parent="StaticBody3D" instance=ExtResource("4_d4nmc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.158208, 0)
+
+[node name="food_ingredient_cheese_slice2" parent="StaticBody3D" instance=ExtResource("5_455sg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0580299, 0)
+
+[node name="food_ingredient_bun_top2" parent="StaticBody3D" instance=ExtResource("6_3xjo1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.255039, 0)
+
+[node name="food_ingredient_burger_cooked2" parent="StaticBody3D" instance=ExtResource("7_wtftt")]
+
+[node name="food_ingredient_bun_bottom2" parent="StaticBody3D" instance=ExtResource("8_cw5ss")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.152762, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.204094, 0)
+shape = SubResource("BoxShape3D_rso40")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00101364, -0.334264, 0.00576261)
+light_color = Color(0.839216, 0, 0.313726, 1)
+light_energy = 1.485
+omni_range = 3.552
+omni_attenuation = 0.963
+
+[node name="Area3D" type="Area3D" parent="StaticBody3D"]
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="StaticBody3D/Area3D"]
+transform = Transform3D(1.04, 0, 0, 0, 1.04, 0, 0, 0, 1.04, 0, 0.204094, 0)
+shape = SubResource("BoxShape3D_rso40")
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(0.375, -2.162e-10, 3.80648e-15, 2.49461e-10, 0.325, -1.48691e-17, -3.80648e-15, 1.28865e-17, 0.375, -0.0544377, 0.782339, -0.00197337)
+billboard = 1
+texture = SubResource("ViewportTexture_3xjo1")
+
+[node name="SubViewport" type="SubViewport" parent="."]
+disable_3d = true
+transparent_bg = true
+anisotropic_filtering_level = 2
+size_2d_override = Vector2i(336, -256)
+
+[node name="Button" parent="SubViewport" instance=ExtResource("9_d4nmc")]
+offset_left = 32.0
+offset_top = 344.0
+offset_right = 176.0
+offset_bottom = 424.0
+script = ExtResource("10_455sg")
+
+[connection signal="body_entered" from="StaticBody3D/Area3D" to="." method="_on_area_3d_body_entered"]

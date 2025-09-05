@@ -1,0 +1,58 @@
+[gd_scene load_steps=7 format=3 uid="uid://bi247u7v3ek2r"]
+
+[ext_resource type="Script" uid="uid://cubyviji2glxu" path="res://script/food.gd" id="1_2xn20"]
+[ext_resource type="PackedScene" uid="uid://dv05ym5rutjvr" path="res://kitchen food gltf/cereals.glb" id="2_w67fh"]
+[ext_resource type="PackedScene" uid="uid://b48mvbd6el3ya" path="res://scene/food_name_label.tscn" id="3_4m326"]
+[ext_resource type="Script" uid="uid://dclanam368oty" path="res://script/food_name_label.gd" id="4_fjat8"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_u35ma"]
+size = Vector3(0.155151, 0.104614, 0.15332)
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_nvaxd"]
+viewport_path = NodePath("SubViewport")
+
+[node name="cereals" type="Node3D"]
+script = ExtResource("1_2xn20")
+
+[node name="StaticBody3D2" type="StaticBody3D" parent="."]
+collision_layer = 2
+
+[node name="cereals" parent="StaticBody3D2" instance=ExtResource("2_w67fh")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00284396, -0.0250805, 0.00291442)
+shape = SubResource("BoxShape3D_u35ma")
+
+[node name="Area3D" type="Area3D" parent="StaticBody3D2"]
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="StaticBody3D2/Area3D"]
+transform = Transform3D(1.04, 0, 0, 0, 1.04, 0, 0, 0, 1.04, 0.00284396, -0.0250805, 0.00291442)
+shape = SubResource("BoxShape3D_u35ma")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="StaticBody3D2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0038532, -0.172488, 0.0021424)
+light_color = Color(0.839216, 0, 0.313726, 1)
+light_energy = 0.322
+light_size = 0.29
+omni_range = 0.552
+omni_attenuation = 0.73
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(0.095, -5.52141e-11, 9.64308e-16, 6.31969e-11, 0.083, -3.76683e-18, -9.64308e-16, 3.29102e-18, 0.095, 0.0123267, 0.0860567, 0.0149868)
+billboard = 1
+texture = SubResource("ViewportTexture_nvaxd")
+
+[node name="SubViewport" type="SubViewport" parent="."]
+disable_3d = true
+transparent_bg = true
+anisotropic_filtering_level = 2
+size_2d_override = Vector2i(336, -256)
+
+[node name="Button" parent="SubViewport" instance=ExtResource("3_4m326")]
+offset_left = 32.0
+offset_top = 344.0
+offset_right = 176.0
+offset_bottom = 424.0
+script = ExtResource("4_fjat8")
+
+[connection signal="body_entered" from="StaticBody3D2/Area3D" to="." method="_on_area_3d_body_entered"]

@@ -1,0 +1,360 @@
+[gd_scene load_steps=13 format=3 uid="uid://d2dl031ir42pe"]
+
+[ext_resource type="Script" uid="uid://bqsycidg3o2x4" path="res://script/kitchen_room.gd" id="1_ed4ba"]
+[ext_resource type="PackedScene" uid="uid://drurypy3lpire" path="res://forest/PP_Free_Forest_Unique fbx files/PP_Meadow_Path_05.fbx" id="2_upglj"]
+[ext_resource type="PackedScene" uid="uid://buax02u0w15lr" path="res://forest/PP_Free_Forest_Unique fbx files/PP_Meadow_07.fbx" id="3_evhkj"]
+[ext_resource type="PackedScene" uid="uid://38unowf6xfqg" path="res://forest/PP_Free_Forest_Unique fbx files/PP_Birch_Tree_05.fbx" id="4_2nxpy"]
+[ext_resource type="PackedScene" uid="uid://s63aodh1lqfv" path="res://forest/PP_Free_Forest_Unique fbx files/PP_Birch_Tree_06.fbx" id="5_87fkw"]
+[ext_resource type="PackedScene" uid="uid://wnydug04m1xu" path="res://forest/PP_Free_Forest_Unique fbx files/PP_Forest_Mountain_Moss_01.fbx" id="6_0rtqp"]
+[ext_resource type="PackedScene" uid="uid://lf3hamkxvr5q" path="res://forest/PP_Free_Forest_Unique fbx files/PP_Mushroom_Fantasy_Orange_10.fbx" id="7_cagob"]
+[ext_resource type="PackedScene" uid="uid://cx877unf3umsa" path="res://forest/PP_Free_Forest_Unique fbx files/PP_Mushroom_Fantasy_Purple_05.fbx" id="8_lj3ky"]
+[ext_resource type="PackedScene" uid="uid://cfv4kmelwi4pk" path="res://forest/PP_Free_Forest_Unique fbx files/PP_Rock_Pile_Forest_Moss_10.fbx" id="9_y46a8"]
+[ext_resource type="PackedScene" uid="uid://bv3a1a6ls8tuw" path="res://forest/PP_Free_Forest_Unique fbx files/PP_Sunflower_04.fbx" id="10_5q450"]
+[ext_resource type="PackedScene" uid="uid://bm40d1efuqo3i" path="res://forest/PP_Free_Forest_Unique fbx files/PP_Tree_02.fbx" id="11_n7x3g"]
+[ext_resource type="PackedScene" uid="uid://p7eotmgfmywj" path="res://forest/PP_Free_Forest_Unique fbx files/PP_Hyacinth_04.fbx" id="12_2nxpy"]
+
+[node name="Node3D" type="StaticBody3D"]
+transform = Transform3D(0.42, 0, 0, 0, 0.42, 0, 0, 0, 0.42, 0, 0, 0.0026238)
+script = ExtResource("1_ed4ba")
+
+[node name="PP_Meadow_Path_05" parent="." instance=ExtResource("2_upglj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.45677, 8.28224, 0.0184419)
+
+[node name="PP_Meadow_Path_06" parent="." instance=ExtResource("2_upglj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.8632, 8.4773, -0.998066)
+
+[node name="PP_Meadow_Path_07" parent="." instance=ExtResource("2_upglj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 42.6552, 7.83112, -0.998066)
+
+[node name="PP_Meadow_Path_08" parent="." instance=ExtResource("2_upglj")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 104.559, 8.28224, -2.08605)
+
+[node name="PP_Meadow_Path_09" parent="." instance=ExtResource("2_upglj")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 83.1525, 8.4773, -1.06954)
+
+[node name="PP_Meadow_Path_10" parent="." instance=ExtResource("2_upglj")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 63.3605, 7.83112, -1.06954)
+
+[node name="PP_Meadow_07" parent="." instance=ExtResource("3_evhkj")]
+transform = Transform3D(2.38095, 0, 0, 0, 2.38095, 0, 0, 0, 2.38095, 15.0786, 5.50265, -29.6768)
+
+[node name="PP_Meadow_08" parent="." instance=ExtResource("3_evhkj")]
+transform = Transform3D(2.38095, 0, 0, 0, 2.38095, 0, 0, 0, 2.38095, 57.6539, 5.50265, -29.6768)
+
+[node name="PP_Meadow_09" parent="." instance=ExtResource("3_evhkj")]
+transform = Transform3D(2.38095, 0, 0, 0, 2.38095, 0, 0, 0, 2.38095, 90.8047, 5.50265, -29.6768)
+
+[node name="PP_Meadow_10" parent="." instance=ExtResource("3_evhkj")]
+transform = Transform3D(2.38095, 0, 0, 0, 2.38095, 0, 0, 0, 2.38095, 15.0786, 5.50265, 28.9841)
+
+[node name="PP_Meadow_11" parent="." instance=ExtResource("3_evhkj")]
+transform = Transform3D(2.38095, 0, 0, 0, 2.38095, 0, 0, 0, 2.38095, 57.6539, 5.50265, 28.9841)
+
+[node name="PP_Meadow_12" parent="." instance=ExtResource("3_evhkj")]
+transform = Transform3D(2.38095, 0, 0, 0, 2.38095, 0, 0, 0, 2.38095, 90.8047, 5.50265, 28.9841)
+
+[node name="PP_Birch_Tree_05" parent="." instance=ExtResource("4_2nxpy")]
+transform = Transform3D(1.48159, 0, -1.86382, 0, 2.38095, 0, 1.86382, 0, 1.48159, 2.87149, 10.1228, -13.2691)
+
+[node name="PP_Birch_Tree_11" parent="." instance=ExtResource("4_2nxpy")]
+transform = Transform3D(1.48159, 0, -1.86382, 0, 2.38095, 0, 1.86382, 0, 1.48159, 8.46456, 10.1228, -25.1434)
+
+[node name="PP_Birch_Tree_06" parent="." instance=ExtResource("5_87fkw")]
+transform = Transform3D(-1.17486, 0, 2.0709, 0, 2.38095, 0, -2.0709, 0, -1.17486, 9.4947, 11.1921, 14.8763)
+
+[node name="PP_Birch_Tree_10" parent="." instance=ExtResource("5_87fkw")]
+transform = Transform3D(-1.17486, 0, 2.0709, 0, 2.38095, 0, -2.0709, 0, -1.17486, 25.682, 11.1921, 37.425)
+
+[node name="PP_Forest_Mountain_Moss_01" parent="." instance=ExtResource("6_0rtqp")]
+transform = Transform3D(1.281, 0, 0, 0, 1.281, 0, 0, 0, 1.281, 30.4046, 7.87063, -32.3885)
+
+[node name="PP_Mushroom_Fantasy_Orange_10" parent="." instance=ExtResource("7_cagob")]
+transform = Transform3D(38.046, 0, 0, 0, 38.046, 0, 0, 0, 38.046, 29.1372, 10.0965, 18.6663)
+
+[node name="PP_Mushroom_Fantasy_Orange_12" parent="." instance=ExtResource("7_cagob")]
+transform = Transform3D(38.046, 0, 0, 0, 38.046, 0, 0, 0, 38.046, 100.267, 10.0965, 39.3256)
+
+[node name="PP_Mushroom_Fantasy_Orange_13" parent="." instance=ExtResource("7_cagob")]
+transform = Transform3D(38.046, 0, 0, 0, 38.046, 0, 0, 0, 38.046, 133.422, 10.0965, 33.3843)
+
+[node name="PP_Mushroom_Fantasy_Orange_14" parent="." instance=ExtResource("7_cagob")]
+transform = Transform3D(18.8495, 0, 14.8736, 0, 24.011, 0, -14.8736, 0, 18.8495, 43.5043, 10.0965, 12.0373)
+
+[node name="PP_Mushroom_Fantasy_Purple_05" parent="." instance=ExtResource("8_lj3ky")]
+transform = Transform3D(36.081, 0, 0, 0, 36.081, 0, 0, 0, 36.081, 55.5054, 8.41978, -15.2558)
+
+[node name="PP_Mushroom_Fantasy_Purple_08" parent="." instance=ExtResource("8_lj3ky")]
+transform = Transform3D(43.531, 0, 0, 0, 43.531, 0, 0, 0, 43.531, 76.2204, 8.41978, 13.3081)
+
+[node name="PP_Rock_Pile_Forest_Moss_10" parent="." instance=ExtResource("9_y46a8")]
+transform = Transform3D(7.941, 0, 0, 0, 7.941, 0, 0, 0, 7.941, 64.4932, 1.47858, 34.8121)
+
+[node name="PP_Sunflower_04" parent="." instance=ExtResource("10_5q450")]
+transform = Transform3D(30.5948, 0, -22.892, 0, 38.211, 0, 22.892, 0, 30.5948, 28.5059, 7.63922, -12.6765)
+
+[node name="PP_Tree_02" parent="." instance=ExtResource("11_n7x3g")]
+transform = Transform3D(7.231, 0, 0, 0, 7.231, 0, 0, 0, 7.231, 82.3909, 5.93574, -21.0062)
+
+[node name="PP_Tree_05" parent="." instance=ExtResource("11_n7x3g")]
+transform = Transform3D(4.971, 0, 0, 0, 4.971, 0, 0, 0, 4.971, 61.7427, 5.93574, -37.1693)
+
+[node name="PP_Meadow_Path_11" parent="." instance=ExtResource("2_upglj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 120.244, 8.28224, 0.0184419)
+
+[node name="PP_Meadow_Path_12" parent="." instance=ExtResource("2_upglj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 141.651, 8.4773, -0.998066)
+
+[node name="PP_Meadow_Path_13" parent="." instance=ExtResource("2_upglj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 161.443, 7.83112, -0.998066)
+
+[node name="PP_Meadow_Path_14" parent="." instance=ExtResource("2_upglj")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 223.346, 8.28224, -2.08605)
+
+[node name="PP_Meadow_Path_15" parent="." instance=ExtResource("2_upglj")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 201.94, 8.4773, -1.06954)
+
+[node name="PP_Meadow_Path_16" parent="." instance=ExtResource("2_upglj")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 182.148, 7.83112, -1.06954)
+
+[node name="PP_Meadow_13" parent="." instance=ExtResource("3_evhkj")]
+transform = Transform3D(2.38095, 0, 0, 0, 2.38095, 0, 0, 0, 2.38095, 133.866, 5.50265, -29.6768)
+
+[node name="PP_Meadow_14" parent="." instance=ExtResource("3_evhkj")]
+transform = Transform3D(2.38095, 0, 0, 0, 2.38095, 0, 0, 0, 2.38095, 176.441, 5.50265, -29.6769)
+
+[node name="PP_Meadow_15" parent="." instance=ExtResource("3_evhkj")]
+transform = Transform3D(2.38095, 0, 0, 0, 2.38095, 0, 0, 0, 2.38095, 209.592, 5.50265, -29.6769)
+
+[node name="PP_Meadow_16" parent="." instance=ExtResource("3_evhkj")]
+transform = Transform3D(2.38095, 0, 0, 0, 2.38095, 0, 0, 0, 2.38095, 133.866, 5.50265, 28.9841)
+
+[node name="PP_Meadow_17" parent="." instance=ExtResource("3_evhkj")]
+transform = Transform3D(2.38095, 0, 0, 0, 2.38095, 0, 0, 0, 2.38095, 176.441, 5.50265, 28.9841)
+
+[node name="PP_Meadow_18" parent="." instance=ExtResource("3_evhkj")]
+transform = Transform3D(2.38095, 0, 0, 0, 2.38095, 0, 0, 0, 2.38095, 209.592, 5.50265, 28.9841)
+
+[node name="PP_Birch_Tree_07" parent="." instance=ExtResource("4_2nxpy")]
+transform = Transform3D(1.48159, 0, -1.86382, 0, 2.38095, 0, 1.86382, 0, 1.48159, 121.659, 10.1228, -13.2691)
+
+[node name="PP_Birch_Tree_09" parent="." instance=ExtResource("4_2nxpy")]
+transform = Transform3D(0.395512, 0, -2.34787, 0, 2.38095, 0, 2.34787, 0, 0.395512, 104.549, 10.1228, -26.6135)
+
+[node name="PP_Birch_Tree_08" parent="." instance=ExtResource("5_87fkw")]
+transform = Transform3D(-1.17486, 0, 2.0709, 0, 2.38095, 0, -2.0709, 0, -1.17486, 146.36, 11.1921, 14.8763)
+
+[node name="PP_Forest_Mountain_Moss_02" parent="." instance=ExtResource("6_0rtqp")]
+transform = Transform3D(-0.0359464, 0, -1.2805, 0, 1.281, 0, 1.2805, 0, -0.0359464, 182.963, 7.87064, 32.3638)
+
+[node name="PP_Mushroom_Fantasy_Orange_11" parent="." instance=ExtResource("7_cagob")]
+transform = Transform3D(38.046, 0, 0, 0, 38.046, 0, 0, 0, 38.046, 221.651, 10.0965, 18.6663)
+
+[node name="PP_Mushroom_Fantasy_Purple_06" parent="." instance=ExtResource("8_lj3ky")]
+transform = Transform3D(43.531, 0, 0, 0, 43.531, 0, 0, 0, 43.531, 174.293, 8.41978, -14.2812)
+
+[node name="PP_Mushroom_Fantasy_Purple_07" parent="." instance=ExtResource("8_lj3ky")]
+transform = Transform3D(43.531, 0, 0, 0, 43.531, 0, 0, 0, 43.531, 125.884, 8.41978, 17.9987)
+
+[node name="PP_Rock_Pile_Forest_Moss_11" parent="." instance=ExtResource("9_y46a8")]
+transform = Transform3D(4.09548, 0, 4.90631, 0, 6.391, 0, -4.90631, 0, 4.09548, 157.462, -1.51574, -37.1993)
+
+[node name="PP_Sunflower_05" parent="." instance=ExtResource("10_5q450")]
+transform = Transform3D(30.5948, 0, -22.892, 0, 38.211, 0, 22.892, 0, 30.5948, 147.293, 7.63922, -15.0304)
+
+[node name="PP_Sunflower_07" parent="." instance=ExtResource("10_5q450")]
+transform = Transform3D(0.522174, 0, -38.2074, 0, 38.211, 0, 38.2074, 0, 0.522174, 170.765, 7.63922, 10.7819)
+
+[node name="PP_Sunflower_06" parent="." instance=ExtResource("10_5q450")]
+transform = Transform3D(30.5948, 0, -22.892, 0, 38.211, 0, 22.892, 0, 30.5948, 179.88, 7.63922, -36.7448)
+
+[node name="PP_Tree_03" parent="." instance=ExtResource("11_n7x3g")]
+transform = Transform3D(7.231, 0, 0, 0, 7.231, 0, 0, 0, 7.231, 201.178, 5.93574, -21.0062)
+
+[node name="PP_Tree_04" parent="." instance=ExtResource("11_n7x3g")]
+transform = Transform3D(7.231, 0, 0, 0, 7.231, 0, 0, 0, 7.231, 108.035, 5.93574, 22.551)
+
+[node name="PP_Meadow_Path_17" parent="." instance=ExtResource("2_upglj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 236.654, 8.28224, 0.0184419)
+
+[node name="PP_Meadow_Path_18" parent="." instance=ExtResource("2_upglj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 258.06, 8.4773, -0.998066)
+
+[node name="PP_Meadow_Path_19" parent="." instance=ExtResource("2_upglj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 277.852, 7.83112, -0.998066)
+
+[node name="PP_Meadow_Path_20" parent="." instance=ExtResource("2_upglj")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 339.756, 8.28224, -2.08605)
+
+[node name="PP_Meadow_Path_21" parent="." instance=ExtResource("2_upglj")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 318.35, 8.4773, -1.06954)
+
+[node name="PP_Meadow_Path_22" parent="." instance=ExtResource("2_upglj")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 298.558, 7.83112, -1.06954)
+
+[node name="PP_Meadow_19" parent="." instance=ExtResource("3_evhkj")]
+transform = Transform3D(2.38095, 0, 0, 0, 2.38095, 0, 0, 0, 2.38095, 250.276, 5.50265, -29.6768)
+
+[node name="PP_Meadow_20" parent="." instance=ExtResource("3_evhkj")]
+transform = Transform3D(2.38095, 0, 0, 0, 2.38095, 0, 0, 0, 2.38095, 292.851, 5.50265, -29.6769)
+
+[node name="PP_Meadow_21" parent="." instance=ExtResource("3_evhkj")]
+transform = Transform3D(2.38095, 0, 0, 0, 2.38095, 0, 0, 0, 2.38095, 326.002, 5.50265, -29.6769)
+
+[node name="PP_Meadow_22" parent="." instance=ExtResource("3_evhkj")]
+transform = Transform3D(2.38095, 0, 0, 0, 2.38095, 0, 0, 0, 2.38095, 250.276, 5.50265, 28.9841)
+
+[node name="PP_Meadow_23" parent="." instance=ExtResource("3_evhkj")]
+transform = Transform3D(2.38095, 0, 0, 0, 2.38095, 0, 0, 0, 2.38095, 292.851, 5.50265, 28.9841)
+
+[node name="PP_Meadow_24" parent="." instance=ExtResource("3_evhkj")]
+transform = Transform3D(2.38095, 0, 0, 0, 2.38095, 0, 0, 0, 2.38095, 326.002, 5.50265, 28.9841)
+
+[node name="PP_Birch_Tree_12" parent="." instance=ExtResource("4_2nxpy")]
+transform = Transform3D(1.48159, 0, -1.86382, 0, 2.38095, 0, 1.86382, 0, 1.48159, 238.068, 10.1228, -13.2691)
+
+[node name="PP_Birch_Tree_13" parent="." instance=ExtResource("4_2nxpy")]
+transform = Transform3D(1.48159, 0, -1.86382, 0, 2.38095, 0, 1.86382, 0, 1.48159, 243.662, 10.1228, -25.1434)
+
+[node name="PP_Birch_Tree_14" parent="." instance=ExtResource("5_87fkw")]
+transform = Transform3D(-1.17486, 0, 2.0709, 0, 2.38095, 0, -2.0709, 0, -1.17486, 244.692, 11.1921, 14.8763)
+
+[node name="PP_Birch_Tree_15" parent="." instance=ExtResource("5_87fkw")]
+transform = Transform3D(-1.17486, 0, 2.0709, 0, 2.38095, 0, -2.0709, 0, -1.17486, 260.879, 11.1921, 37.425)
+
+[node name="PP_Forest_Mountain_Moss_03" parent="." instance=ExtResource("6_0rtqp")]
+transform = Transform3D(1.281, 0, 0, 0, 1.281, 0, 0, 0, 1.281, 265.602, 7.87064, -32.3885)
+
+[node name="PP_Mushroom_Fantasy_Orange_15" parent="." instance=ExtResource("7_cagob")]
+transform = Transform3D(38.046, 0, 0, 0, 38.046, 0, 0, 0, 38.046, 264.334, 10.0965, 18.6663)
+
+[node name="PP_Mushroom_Fantasy_Orange_16" parent="." instance=ExtResource("7_cagob")]
+transform = Transform3D(38.046, 0, 0, 0, 38.046, 0, 0, 0, 38.046, 335.464, 10.0965, 39.3256)
+
+[node name="PP_Mushroom_Fantasy_Orange_17" parent="." instance=ExtResource("7_cagob")]
+transform = Transform3D(38.046, 0, 0, 0, 38.046, 0, 0, 0, 38.046, 368.619, 10.0965, 33.3843)
+
+[node name="PP_Mushroom_Fantasy_Orange_18" parent="." instance=ExtResource("7_cagob")]
+transform = Transform3D(18.8495, 0, 14.8736, 0, 24.011, 0, -14.8736, 0, 18.8495, 278.701, 10.0965, 11.051)
+
+[node name="PP_Mushroom_Fantasy_Purple_09" parent="." instance=ExtResource("8_lj3ky")]
+transform = Transform3D(36.081, 0, 0, 0, 36.081, 0, 0, 0, 36.081, 290.702, 8.41978, -16.6494)
+
+[node name="PP_Mushroom_Fantasy_Purple_13" parent="." instance=ExtResource("8_lj3ky")]
+transform = Transform3D(36.081, 0, 0, 0, 36.081, 0, 0, 0, 36.081, 220.272, 8.41978, -22.6341)
+
+[node name="PP_Mushroom_Fantasy_Purple_10" parent="." instance=ExtResource("8_lj3ky")]
+transform = Transform3D(43.531, 0, 0, 0, 43.531, 0, 0, 0, 43.531, 311.417, 8.41978, 13.905)
+
+[node name="PP_Rock_Pile_Forest_Moss_12" parent="." instance=ExtResource("9_y46a8")]
+transform = Transform3D(7.941, 0, 0, 0, 7.941, 0, 0, 0, 7.941, 299.69, 1.47858, 34.8121)
+
+[node name="PP_Sunflower_08" parent="." instance=ExtResource("10_5q450")]
+transform = Transform3D(30.5948, 0, -22.892, 0, 38.211, 0, 22.892, 0, 30.5948, 263.703, 7.63922, -11.5975)
+
+[node name="PP_Tree_06" parent="." instance=ExtResource("11_n7x3g")]
+transform = Transform3D(7.231, 0, 0, 0, 7.231, 0, 0, 0, 7.231, 317.588, 5.93574, -21.0062)
+
+[node name="PP_Tree_07" parent="." instance=ExtResource("11_n7x3g")]
+transform = Transform3D(4.971, 0, 0, 0, 4.971, 0, 0, 0, 4.971, 296.94, 5.93574, -37.1693)
+
+[node name="PP_Tree_10" parent="." instance=ExtResource("11_n7x3g")]
+transform = Transform3D(4.281, 0, 0, 0, 4.281, 0, 0, 0, 4.281, 219.722, 5.93573, 40.0411)
+
+[node name="PP_Meadow_Path_23" parent="." instance=ExtResource("2_upglj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 355.441, 8.28224, 0.0184419)
+
+[node name="PP_Meadow_Path_24" parent="." instance=ExtResource("2_upglj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 376.848, 8.4773, -0.998067)
+
+[node name="PP_Meadow_Path_25" parent="." instance=ExtResource("2_upglj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 396.64, 7.83112, -0.998067)
+
+[node name="PP_Meadow_Path_26" parent="." instance=ExtResource("2_upglj")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 458.543, 8.28224, -2.08605)
+
+[node name="PP_Meadow_Path_27" parent="." instance=ExtResource("2_upglj")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 437.137, 8.4773, -1.06954)
+
+[node name="PP_Meadow_Path_28" parent="." instance=ExtResource("2_upglj")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 417.345, 7.83112, -1.06954)
+
+[node name="PP_Meadow_25" parent="." instance=ExtResource("3_evhkj")]
+transform = Transform3D(2.38095, 0, 0, 0, 2.38095, 0, 0, 0, 2.38095, 369.063, 5.50265, -29.6769)
+
+[node name="PP_Meadow_26" parent="." instance=ExtResource("3_evhkj")]
+transform = Transform3D(2.38095, 0, 0, 0, 2.38095, 0, 0, 0, 2.38095, 411.638, 5.50265, -29.6769)
+
+[node name="PP_Meadow_27" parent="." instance=ExtResource("3_evhkj")]
+transform = Transform3D(2.38095, 0, 0, 0, 2.38095, 0, 0, 0, 2.38095, 444.789, 5.50265, -29.6769)
+
+[node name="PP_Meadow_28" parent="." instance=ExtResource("3_evhkj")]
+transform = Transform3D(2.38095, 0, 0, 0, 2.38095, 0, 0, 0, 2.38095, 369.063, 5.50265, 28.9841)
+
+[node name="PP_Meadow_29" parent="." instance=ExtResource("3_evhkj")]
+transform = Transform3D(2.38095, 0, 0, 0, 2.38095, 0, 0, 0, 2.38095, 411.638, 5.50265, 28.9841)
+
+[node name="PP_Meadow_30" parent="." instance=ExtResource("3_evhkj")]
+transform = Transform3D(2.38095, 0, 0, 0, 2.38095, 0, 0, 0, 2.38095, 444.789, 5.50265, 28.9841)
+
+[node name="PP_Birch_Tree_16" parent="." instance=ExtResource("4_2nxpy")]
+transform = Transform3D(1.48159, 0, -1.86382, 0, 2.38095, 0, 1.86382, 0, 1.48159, 356.856, 10.1228, -13.2691)
+
+[node name="PP_Birch_Tree_17" parent="." instance=ExtResource("4_2nxpy")]
+transform = Transform3D(0.395512, 0, -2.34787, 0, 2.38095, 0, 2.34787, 0, 0.395512, 339.746, 10.1228, -26.6135)
+
+[node name="PP_Birch_Tree_18" parent="." instance=ExtResource("5_87fkw")]
+transform = Transform3D(-1.17486, 0, 2.0709, 0, 2.38095, 0, -2.0709, 0, -1.17486, 381.557, 11.1921, 14.8763)
+
+[node name="PP_Forest_Mountain_Moss_04" parent="." instance=ExtResource("6_0rtqp")]
+transform = Transform3D(-0.0359464, 0, -1.2805, 0, 1.281, 0, 1.2805, 0, -0.0359464, 418.16, 7.87064, 32.3638)
+
+[node name="PP_Mushroom_Fantasy_Orange_19" parent="." instance=ExtResource("7_cagob")]
+transform = Transform3D(38.046, 0, 0, 0, 38.046, 0, 0, 0, 38.046, 456.848, 10.0965, 18.6663)
+
+[node name="PP_Mushroom_Fantasy_Purple_11" parent="." instance=ExtResource("8_lj3ky")]
+transform = Transform3D(43.531, 0, 0, 0, 43.531, 0, 0, 0, 43.531, 409.49, 8.41978, -17.6759)
+
+[node name="PP_Mushroom_Fantasy_Purple_12" parent="." instance=ExtResource("8_lj3ky")]
+transform = Transform3D(43.531, 0, 0, 0, 43.531, 0, 0, 0, 43.531, 361.081, 8.41978, 17.9987)
+
+[node name="PP_Rock_Pile_Forest_Moss_13" parent="." instance=ExtResource("9_y46a8")]
+transform = Transform3D(4.09548, 0, 4.90632, 0, 6.391, 0, -4.90632, 0, 4.09548, 392.659, -1.51574, -37.1993)
+
+[node name="PP_Sunflower_09" parent="." instance=ExtResource("10_5q450")]
+transform = Transform3D(30.5948, 0, -22.892, 0, 38.211, 0, 22.892, 0, 30.5948, 382.49, 7.63922, -15.8926)
+
+[node name="PP_Sunflower_10" parent="." instance=ExtResource("10_5q450")]
+transform = Transform3D(11.7628, 0, -36.3554, 0, 38.211, 0, 36.3554, 0, 11.7628, 405.962, 7.63922, 11.2933)
+
+[node name="PP_Sunflower_11" parent="." instance=ExtResource("10_5q450")]
+transform = Transform3D(30.5948, 0, -22.892, 0, 38.211, 0, 22.892, 0, 30.5948, 415.077, 7.63922, -36.7449)
+
+[node name="PP_Tree_08" parent="." instance=ExtResource("11_n7x3g")]
+transform = Transform3D(7.231, 0, 0, 0, 7.231, 0, 0, 0, 7.231, 436.375, 5.93574, -21.0062)
+
+[node name="PP_Tree_09" parent="." instance=ExtResource("11_n7x3g")]
+transform = Transform3D(7.231, 0, 0, 0, 7.231, 0, 0, 0, 7.231, 343.232, 5.93574, 22.551)
+
+[node name="PP_Hyacinth_04" parent="." instance=ExtResource("12_2nxpy")]
+transform = Transform3D(-32.5158, 0, -5.14941, 0, 32.921, 0, 5.14941, 0, -32.5158, -2.8769, 9.6692, 12.6391)
+
+[node name="PP_Hyacinth_05" parent="." instance=ExtResource("12_2nxpy")]
+transform = Transform3D(32.2724, 0, 6.50258, 0, 32.921, 0, -6.50258, 0, 32.2724, -3.82912, 9.6692, -26.9027)
+
+[node name="PP_Hyacinth_06" parent="." instance=ExtResource("12_2nxpy")]
+transform = Transform3D(32.2724, 0, 6.50258, 0, 32.921, 0, -6.50258, 0, 32.2724, 15.132, 9.6692, -12.2958)
+
+[node name="PP_Hyacinth_07" parent="." instance=ExtResource("12_2nxpy")]
+transform = Transform3D(-10.5097, 0, -31.1984, 0, 32.921, 0, 31.1984, 0, -10.5097, 60.7581, 9.6692, 11.2182)
+
+[node name="PP_Hyacinth_08" parent="." instance=ExtResource("12_2nxpy")]
+transform = Transform3D(32.6346, 0, -4.33294, 0, 32.921, 0, 4.33294, 0, 32.6346, 103.234, 9.6692, -15.9727)
+
+[node name="PP_Hyacinth_09" parent="." instance=ExtResource("12_2nxpy")]
+transform = Transform3D(-32.894, 0, 1.33381, 0, 32.921, 0, -1.33381, 0, -32.894, 91.5695, 9.6692, 17.0438)
+
+[node name="PP_Hyacinth_10" parent="." instance=ExtResource("12_2nxpy")]
+transform = Transform3D(28.1621, 0, 17.0496, 0, 32.921, 0, -17.0496, 0, 28.1621, 159.707, 9.6692, -14.0451)
+
+[node name="PP_Hyacinth_11" parent="." instance=ExtResource("12_2nxpy")]
+transform = Transform3D(-5.4426, 0, -32.468, 0, 32.921, 0, 32.468, 0, -5.4426, 199.045, 9.6692, 16.4639)

@@ -1,0 +1,67 @@
+[gd_scene load_steps=7 format=3 uid="uid://dkt0qgwt5wcsk"]
+
+[ext_resource type="Script" uid="uid://dbs4smn8hp3q" path="res://script/intro.gd" id="1_yv8ol"]
+[ext_resource type="Texture2D" uid="uid://dy7uw0ao62ouv" path="res://Resources/GLUTEN RUNNER.png" id="2_yv8ol"]
+[ext_resource type="AudioStream" uid="uid://dv0ci5co488wi" path="res://Music/youtube-intro-sound-202986_1.ogg" id="3_srnjo"]
+
+[sub_resource type="Animation" id="Animation_0a7ni"]
+resource_name = "Fade In"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.0666667, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_y72e6"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_u2rf6"]
+_data = {
+&"Fade In": SubResource("Animation_0a7ni"),
+&"RESET": SubResource("Animation_y72e6")
+}
+
+[node name="Intro" type="Node2D"]
+script = ExtResource("1_yv8ol")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(358.788, 641.878)
+scale = Vector2(1.03392, 1.01543)
+texture = ExtResource("2_yv8ol")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -75.0
+offset_top = -165.0
+offset_right = 840.0
+offset_bottom = 1464.0
+color = Color(0, 0, 0, 1)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_u2rf6")
+}
+
+[node name="audio" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_srnjo")
+volume_db = -4.18
+
+[node name="HTTPRequest" type="HTTPRequest" parent="."]

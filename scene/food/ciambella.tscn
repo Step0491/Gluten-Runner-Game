@@ -1,0 +1,58 @@
+[gd_scene load_steps=7 format=3 uid="uid://divu4ru8jrdtu"]
+
+[ext_resource type="Script" uid="uid://cubyviji2glxu" path="res://script/food.gd" id="1_55pov"]
+[ext_resource type="PackedScene" uid="uid://xoah6ijvswf5" path="res://kitchen food gltf/donutwithsparklepink.glb" id="2_55pov"]
+[ext_resource type="PackedScene" uid="uid://b48mvbd6el3ya" path="res://scene/food_name_label.tscn" id="3_ogdrr"]
+[ext_resource type="Script" uid="uid://dclanam368oty" path="res://script/food_name_label.gd" id="4_niqrf"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_b58a0"]
+height = 0.108398
+radius = 0.131348
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_tlc4t"]
+viewport_path = NodePath("SubViewport")
+
+[node name="donut" type="Node3D"]
+script = ExtResource("1_55pov")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+collision_layer = 2
+
+[node name="donutwithsparklepink2" parent="StaticBody3D" instance=ExtResource("2_55pov")]
+transform = Transform3D(1, 0, 0, 0, 0.872862, -0.487966, 0, 0.487966, 0.872862, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0110461, 0.0147109, 0)
+shape = SubResource("CylinderShape3D_b58a0")
+
+[node name="Area3D" type="Area3D" parent="StaticBody3D"]
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="StaticBody3D/Area3D"]
+transform = Transform3D(1.04, 0, 0, 0, 1.04, 0, 0, 0, 1.04, 0.0110461, 0.0133218, 0)
+shape = SubResource("CylinderShape3D_b58a0")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.000974655, -0.123835, 0.001223)
+light_color = Color(0.839216, 0, 0.313726, 1)
+omni_range = 0.951851
+omni_attenuation = 1.2
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(0.185, -1.07102e-10, 1.87786e-15, 1.23068e-10, 0.161, -7.33541e-18, -1.87786e-15, 6.38379e-18, 0.185, -0.0151058, 0.229412, -0.00197337)
+billboard = 1
+texture = SubResource("ViewportTexture_tlc4t")
+
+[node name="SubViewport" type="SubViewport" parent="."]
+disable_3d = true
+transparent_bg = true
+anisotropic_filtering_level = 2
+size_2d_override = Vector2i(336, -256)
+
+[node name="Button" parent="SubViewport" instance=ExtResource("3_ogdrr")]
+offset_left = 32.0
+offset_top = 344.0
+offset_right = 176.0
+offset_bottom = 424.0
+script = ExtResource("4_niqrf")
+
+[connection signal="body_entered" from="StaticBody3D/Area3D" to="." method="_on_area_3d_body_entered"]

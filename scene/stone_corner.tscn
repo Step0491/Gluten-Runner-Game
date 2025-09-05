@@ -1,0 +1,401 @@
+[gd_scene load_steps=2 format=3 uid="uid://cejirda036yj6"]
+
+[ext_resource type="PackedScene" uid="uid://cfv4kmelwi4pk" path="res://forest/PP_Free_Forest_Unique fbx files/PP_Rock_Pile_Forest_Moss_10.fbx" id="1_fxdrx"]
+
+[node name="Node3D" type="StaticBody3D"]
+
+[node name="PP_Rock_Pile_Forest_Moss_12" parent="." instance=ExtResource("1_fxdrx")]
+transform = Transform3D(-0.0516219, 0, 0.290448, 0, 0.295, 0, -0.290448, 0, -0.0516219, -0.662, -0.150038, 24.4951)
+
+[node name="PP_Rock_Pile_Forest_Moss_13" parent="." instance=ExtResource("1_fxdrx")]
+transform = Transform3D(-0.0516219, 0, 0.290448, 0, 0.295, 0, -0.290448, 0, -0.0516219, 3.774, -0.150038, 24.4951)
+
+[node name="PP_Rock_Pile_Forest_Moss_14" parent="." instance=ExtResource("1_fxdrx")]
+transform = Transform3D(-0.282465, 0, -0.0850773, 0, 0.295, 0, 0.0850773, 0, -0.282465, 3.774, 0.0664336, 23.1992)
+
+[node name="PP_Rock_Pile_Forest_Moss_18" parent="." instance=ExtResource("1_fxdrx")]
+transform = Transform3D(0.190422, 0, -0.225309, 0, 0.295, 0, 0.225309, 0, 0.190422, 3.774, -0.150038, 18.4086)
+
+[node name="PP_Rock_Pile_Forest_Moss_16" parent="." instance=ExtResource("1_fxdrx")]
+transform = Transform3D(-0.282465, 0, -0.0850773, 0, 0.295, 0, 0.0850773, 0, -0.282465, 3.774, -0.0376443, 20.7302)
+
+[node name="PP_Rock_Pile_Forest_Moss_17" parent="." instance=ExtResource("1_fxdrx")]
+transform = Transform3D(-0.0204443, 0, -0.29429, 0, 0.295, 0, 0.29429, 0, -0.0204443, 3.774, 0.0468652, 19.4208)
+
+[node name="PP_Rock_Pile_Forest_Moss_15" parent="." instance=ExtResource("1_fxdrx")]
+transform = Transform3D(0.184667, 0, 0.23005, 0, 0.295, 0, -0.23005, 0, 0.184667, 3.774, -0.0807305, 22.0933)
+
+[node name="PP_Rock_Pile_Forest_Moss_19" parent="." instance=ExtResource("1_fxdrx")]
+transform = Transform3D(-0.117504, 0, 0.270588, 0, 0.295, 0, -0.270588, 0, -0.117504, 3.774, -0.150038, 16.8653)
+
+[node name="PP_Rock_Pile_Forest_Moss_20" parent="." instance=ExtResource("1_fxdrx")]
+transform = Transform3D(-0.282465, 0, -0.0850773, 0, 0.295, 0, 0.0850773, 0, -0.282465, 3.774, 0.0664336, 15.6601)
+
+[node name="PP_Rock_Pile_Forest_Moss_21" parent="." instance=ExtResource("1_fxdrx")]
+transform = Transform3D(0.190422, 0, -0.225309, 0, 0.295, 0, 0.225309, 0, 0.190422, 3.774, -0.150038, 10.8695)
+
+[node name="PP_Rock_Pile_Forest_Moss_22" parent="." instance=ExtResource("1_fxdrx")]
+transform = Transform3D(-0.282465, 0, -0.0850773, 0, 0.295, 0, 0.0850773, 0, -0.282465, 3.774, -0.0376443, 13.1911)
+
+[node name="PP_Rock_Pile_Forest_Moss_23" parent="." instance=ExtResource("1_fxdrx")]
+transform = Transform3D(-0.0204443, 0, -0.29429, 0, 0.295, 0, 0.29429, 0, -0.0204443, 3.774, 0.0468652, 11.8817)
+
+[node name="PP_Rock_Pile_Forest_Moss_24" parent="." instance=ExtResource("1_fxdrx")]
+transform = Transform3D(0.184667, 0, 0.23005, 0, 0.295, 0, -0.23005, 0, 0.184667, 3.774, -0.0807305, 14.5542)
+
+[node name="PP_Rock_Pile_Forest_Moss_25" parent="." instance=ExtResource("1_fxdrx")]
+transform = Transform3D(-0.117504, 0, 0.270588, 0, 0.295, 0, -0.270588, 0, -0.117504, 3.774, -0.150038, 9.31421)
+
+[node name="PP_Rock_Pile_Forest_Moss_26" parent="." instance=ExtResource("1_fxdrx")]
+transform = Transform3D(-0.282465, 0, -0.0850773, 0, 0.295, 0, 0.0850773, 0, -0.282465, 3.774, 0.0664336, 8.10898)
+
+[node name="PP_Rock_Pile_Forest_Moss_27" parent="." instance=ExtResource("1_fxdrx")]
+transform = Transform3D(0.190422, 0, -0.225309, 0, 0.295, 0, 0.225309, 0, 0.190422, 3.774, -0.150038, 3.31841)
+
+[node name="PP_Rock_Pile_Forest_Moss_28" parent="." instance=ExtResource("1_fxdrx")]
+transform = Transform3D(-0.282465, 0, -0.0850773, 0, 0.295, 0, 0.0850773, 0, -0.282465, 3.774, -0.0376443, 5.63999)
+
+[node name="PP_Rock_Pile_Forest_Moss_29" parent="." instance=ExtResource("1_fxdrx")]
+transform = Transform3D(-0.0204443, 0, -0.29429, 0, 0.295, 0, 0.29429, 0, -0.0204443, 3.774, 0.0468652, 4.33053)
+
+[node name="PP_Rock_Pile_Forest_Moss_30" parent="." instance=ExtResource("1_fxdrx")]
+transform = Transform3D(0.184667, 0, 0.23005, 0, 0.295, 0, -0.23005, 0, 0.184667, 3.774, -0.0807305, 7.00311)
+
+[node name="PP_Rock_Pile_Forest_Moss_31" parent="." instance=ExtResource("1_fxdrx")]
+transform = Transform3D(-0.117504, 0, 0.270588, 0, 0.295, 0, -0.270588, 0, -0.117504, 3.774, -0.150038, 1.84261)
+
+[node name="PP_Rock_Pile_Forest_Moss_32" parent="." instance=ExtResource("1_fxdrx")]
+transform = Transform3D(-0.282465, 0, -0.0850773, 0, 0.295, 0, 0.0850773, 0, -0.282465, 3.774, 0.0664336, 0.637378)
+
+[node name="PP_Rock_Pile_Forest_Moss_33" parent="." instance=ExtResource("1_fxdrx")]
+transform = Transform3D(0.190422, 0, -0.225309, 0, 0.295, 0, 0.225309, 0, 0.190422, 3.774, -0.150038, -4.1532)
+
+[node name="PP_Rock_Pile_Forest_Moss_34" parent="." instance=ExtResource("1_fxdrx")]
+transform = Transform3D(-0.282465, 0, -0.0850773, 0, 0.295, 0, 0.0850773, 0, -0.282465, 3.774, -0.0376443, -1.83162)
+
+[node name="PP_Rock_Pile_Forest_Moss_35" parent="." instance=ExtResource("1_fxdrx")]
+transform = Transform3D(-0.0204443, 0, -0.29429, 0, 0.295, 0, 0.29429, 0, -0.0204443, 3.774, 0.0468652, -3.14108)
+
+[node name="PP_Rock_Pile_Forest_Moss_36" parent="." instance=ExtResource("1_fxdrx")]
+transform = Transform3D(0.184667, 0, 0.23005, 0, 0.295, 0, -0.23005, 0, 0.184667, 3.774, -0.0807305, -0.468497)
+
+[node name="PP_Rock_Pile_Forest_Moss_37" parent="." instance=ExtResource("1_fxdrx")]
+transform = Transform3D(-0.117504, 0, 0.270588, 0, 0.295, 0, -0.270588, 0, -0.117504, 3.774, -0.150038, -5.62287)
+
+[node name="PP_Rock_Pile_Forest_Moss_38" parent="." instance=ExtResource("1_fxdrx")]
+transform = Transform3D(-0.282465, 0, -0.0850773, 0, 0.295, 0, 0.0850773, 0, -0.282465, 3.774, 0.0664336, -6.8281)
+
+[node name="PP_Rock_Pile_Forest_Moss_39" parent="." instance=ExtResource("1_fxdrx")]
+transform = Transform3D(0.190422, 0, -0.225309, 0, 0.295, 0, 0.225309, 0, 0.190422, 3.774, -0.150038, -11.6187)
+
+[node name="PP_Rock_Pile_Forest_Moss_40" parent="." instance=ExtResource("1_fxdrx")]
+transform = Transform3D(-0.282465, 0, -0.0850773, 0, 0.295, 0, 0.0850773, 0, -0.282465, 3.774, -0.0376443, -9.2971)
+
+[node name="PP_Rock_Pile_Forest_Moss_41" parent="." instance=ExtResource("1_fxdrx")]
+transform = Transform3D(-0.0204443, 0, -0.29429, 0, 0.295, 0, 0.29429, 0, -0.0204443, 3.774, 0.0468652, -10.6066)
+
+[node name="PP_Rock_Pile_Forest_Moss_42" parent="." instance=ExtResource("1_fxdrx")]
+transform = Transform3D(0.184667, 0, 0.23005, 0, 0.295, 0, -0.23005, 0, 0.184667, 3.774, -0.0807305, -7.93398)
+
+[node name="PP_Rock_Pile_Forest_Moss_43" parent="." instance=ExtResource("1_fxdrx")]
+transform = Transform3D(-0.117504, 0, 0.270588, 0, 0.295, 0, -0.270588, 0, -0.117504, 3.774, -0.150038, -13.1066)
+
+[node name="PP_Rock_Pile_Forest_Moss_44" parent="." instance=ExtResource("1_fxdrx")]
+transform = Transform3D(-0.282465, 0, -0.0850773, 0, 0.295, 0, 0.0850773, 0, -0.282465, 3.774, 0.0664336, -14.3119)
+
+[node name="PP_Rock_Pile_Forest_Moss_45" parent="." instance=ExtResource("1_fxdrx")]
+transform = Transform3D(0.190422, 0, -0.225309, 0, 0.295, 0, 0.225309, 0, 0.190422, 3.774, -0.150038, -19.1024)
+
+[node name="PP_Rock_Pile_Forest_Moss_46" parent="." instance=ExtResource("1_fxdrx")]
+transform = Transform3D(-0.282465, 0, -0.0850773, 0, 0.295, 0, 0.0850773, 0, -0.282465, 3.774, -0.0376443, -16.7809)
+
+[node name="PP_Rock_Pile_Forest_Moss_47" parent="." instance=ExtResource("1_fxdrx")]
+transform = Transform3D(-0.0204443, 0, -0.29429, 0, 0.295, 0, 0.29429, 0, -0.0204443, 3.774, 0.0468652, -18.0903)
+
+[node name="PP_Rock_Pile_Forest_Moss_48" parent="." instance=ExtResource("1_fxdrx")]
+transform = Transform3D(0.184667, 0, 0.23005, 0, 0.295, 0, -0.23005, 0, 0.184667, 3.774, -0.0807305, -15.4177)
+
+[node name="PP_Rock_Pile_Forest_Moss_49" parent="." instance=ExtResource("1_fxdrx")]
+transform = Transform3D(-0.117504, 0, 0.270588, 0, 0.295, 0, -0.270588, 0, -0.117504, 3.774, -0.150038, -20.6798)
+
+[node name="PP_Rock_Pile_Forest_Moss_50" parent="." instance=ExtResource("1_fxdrx")]
+transform = Transform3D(-0.282465, 0, -0.0850773, 0, 0.295, 0, 0.0850773, 0, -0.282465, 3.774, 0.0664336, -21.885)
+
+[node name="PP_Rock_Pile_Forest_Moss_51" parent="." instance=ExtResource("1_fxdrx")]
+transform = Transform3D(0.190422, 0, -0.225309, 0, 0.295, 0, 0.225309, 0, 0.190422, 3.774, -0.150038, -26.6756)
+
+[node name="PP_Rock_Pile_Forest_Moss_52" parent="." instance=ExtResource("1_fxdrx")]
+transform = Transform3D(-0.282465, 0, -0.0850773, 0, 0.295, 0, 0.0850773, 0, -0.282465, 3.774, -0.0376443, -24.354)
+
+[node name="PP_Rock_Pile_Forest_Moss_53" parent="." instance=ExtResource("1_fxdrx")]
+transform = Transform3D(-0.0204443, 0, -0.29429, 0, 0.295, 0, 0.29429, 0, -0.0204443, 3.774, 0.0468652, -25.6635)
+
+[node name="PP_Rock_Pile_Forest_Moss_54" parent="." instance=ExtResource("1_fxdrx")]
+transform = Transform3D(0.184667, 0, 0.23005, 0, 0.295, 0, -0.23005, 0, 0.184667, 3.774, -0.0807305, -22.9909)
+
+[node name="PP_Rock_Pile_Forest_Moss_55" parent="." instance=ExtResource("1_fxdrx")]
+transform = Transform3D(-0.117504, 0, 0.270588, 0, 0.295, 0, -0.270588, 0, -0.117504, 3.774, -0.150038, -28.1635)
+
+[node name="PP_Rock_Pile_Forest_Moss_56" parent="." instance=ExtResource("1_fxdrx")]
+transform = Transform3D(-0.282465, 0, -0.0850773, 0, 0.295, 0, 0.0850773, 0, -0.282465, 3.774, 0.0664336, -29.3688)
+
+[node name="PP_Rock_Pile_Forest_Moss_57" parent="." instance=ExtResource("1_fxdrx")]
+transform = Transform3D(0.190422, 0, -0.225309, 0, 0.295, 0, 0.225309, 0, 0.190422, 3.774, -0.150038, -34.1594)
+
+[node name="PP_Rock_Pile_Forest_Moss_58" parent="." instance=ExtResource("1_fxdrx")]
+transform = Transform3D(-0.282465, 0, -0.0850773, 0, 0.295, 0, 0.0850773, 0, -0.282465, 3.774, -0.0376443, -31.8378)
+
+[node name="PP_Rock_Pile_Forest_Moss_59" parent="." instance=ExtResource("1_fxdrx")]
+transform = Transform3D(-0.0204443, 0, -0.29429, 0, 0.295, 0, 0.29429, 0, -0.0204443, 3.774, 0.0468652, -33.1472)
+
+[node name="PP_Rock_Pile_Forest_Moss_60" parent="." instance=ExtResource("1_fxdrx")]
+transform = Transform3D(0.184667, 0, 0.23005, 0, 0.295, 0, -0.23005, 0, 0.184667, 3.774, -0.0807305, -30.4747)
+
+[node name="PP_Rock_Pile_Forest_Moss_61" parent="." instance=ExtResource("1_fxdrx")]
+transform = Transform3D(-0.117504, 0, 0.270588, 0, 0.295, 0, -0.270588, 0, -0.117504, 3.774, -0.150038, -35.7814)
+
+[node name="PP_Rock_Pile_Forest_Moss_62" parent="." instance=ExtResource("1_fxdrx")]
+transform = Transform3D(-0.282465, 0, -0.0850773, 0, 0.295, 0, 0.0850773, 0, -0.282465, 3.774, 0.0664336, -36.9866)
+
+[node name="PP_Rock_Pile_Forest_Moss_63" parent="." instance=ExtResource("1_fxdrx")]
+transform = Transform3D(0.190422, 0, -0.225309, 0, 0.295, 0, 0.225309, 0, 0.190422, 3.774, -0.150038, -41.7772)
+
+[node name="PP_Rock_Pile_Forest_Moss_64" parent="." instance=ExtResource("1_fxdrx")]
+transform = Transform3D(-0.282465, 0, -0.0850773, 0, 0.295, 0, 0.0850773, 0, -0.282465, 3.774, -0.0376443, -39.4556)
+
+[node name="PP_Rock_Pile_Forest_Moss_65" parent="." instance=ExtResource("1_fxdrx")]
+transform = Transform3D(-0.0204443, 0, -0.29429, 0, 0.295, 0, 0.29429, 0, -0.0204443, 3.774, 0.0468652, -40.7651)
+
+[node name="PP_Rock_Pile_Forest_Moss_66" parent="." instance=ExtResource("1_fxdrx")]
+transform = Transform3D(0.184667, 0, 0.23005, 0, 0.295, 0, -0.23005, 0, 0.184667, 3.774, -0.0807305, -38.0925)
+
+[node name="PP_Rock_Pile_Forest_Moss_67" parent="." instance=ExtResource("1_fxdrx")]
+transform = Transform3D(-0.117504, 0, 0.270588, 0, 0.295, 0, -0.270588, 0, -0.117504, 3.774, -0.150038, -43.2652)
+
+[node name="PP_Rock_Pile_Forest_Moss_68" parent="." instance=ExtResource("1_fxdrx")]
+transform = Transform3D(-0.282465, 0, -0.0850773, 0, 0.295, 0, 0.0850773, 0, -0.282465, 3.774, 0.0664336, -44.4704)
+
+[node name="PP_Rock_Pile_Forest_Moss_69" parent="." instance=ExtResource("1_fxdrx")]
+transform = Transform3D(0.190422, 0, -0.225309, 0, 0.295, 0, 0.225309, 0, 0.190422, 3.774, -0.150038, -49.261)
+
+[node name="PP_Rock_Pile_Forest_Moss_70" parent="." instance=ExtResource("1_fxdrx")]
+transform = Transform3D(-0.282465, 0, -0.0850773, 0, 0.295, 0, 0.0850773, 0, -0.282465, 3.774, -0.0376443, -46.9394)
+
+[node name="PP_Rock_Pile_Forest_Moss_71" parent="." instance=ExtResource("1_fxdrx")]
+transform = Transform3D(-0.0204443, 0, -0.29429, 0, 0.295, 0, 0.29429, 0, -0.0204443, 3.774, 0.0468652, -48.2489)
+
+[node name="PP_Rock_Pile_Forest_Moss_72" parent="." instance=ExtResource("1_fxdrx")]
+transform = Transform3D(0.184667, 0, 0.23005, 0, 0.295, 0, -0.23005, 0, 0.184667, 3.774, -0.0807305, -45.5763)
+
+[node name="PP_Rock_Pile_Forest_Moss_73" parent="." instance=ExtResource("1_fxdrx")]
+transform = Transform3D(-0.117504, 0, 0.270588, 0, 0.295, 0, -0.270588, 0, -0.117504, 3.774, -0.150038, -50.7875)
+
+[node name="PP_Rock_Pile_Forest_Moss_74" parent="." instance=ExtResource("1_fxdrx")]
+transform = Transform3D(-0.282465, 0, -0.0850773, 0, 0.295, 0, 0.0850773, 0, -0.282465, 3.774, 0.0664336, -51.9927)
+
+[node name="PP_Rock_Pile_Forest_Moss_75" parent="." instance=ExtResource("1_fxdrx")]
+transform = Transform3D(0.190422, 0, -0.225309, 0, 0.295, 0, 0.225309, 0, 0.190422, 3.774, -0.150038, -56.7833)
+
+[node name="PP_Rock_Pile_Forest_Moss_76" parent="." instance=ExtResource("1_fxdrx")]
+transform = Transform3D(-0.282465, 0, -0.0850773, 0, 0.295, 0, 0.0850773, 0, -0.282465, 3.774, -0.0376443, -54.4617)
+
+[node name="PP_Rock_Pile_Forest_Moss_77" parent="." instance=ExtResource("1_fxdrx")]
+transform = Transform3D(-0.0204443, 0, -0.29429, 0, 0.295, 0, 0.29429, 0, -0.0204443, 3.774, 0.0468652, -55.7712)
+
+[node name="PP_Rock_Pile_Forest_Moss_78" parent="." instance=ExtResource("1_fxdrx")]
+transform = Transform3D(0.184667, 0, 0.23005, 0, 0.295, 0, -0.23005, 0, 0.184667, 3.774, -0.0807305, -53.0986)
+
+[node name="PP_Rock_Pile_Forest_Moss_80" parent="." instance=ExtResource("1_fxdrx")]
+transform = Transform3D(-0.282465, 0, -0.0850773, 0, 0.295, 0, 0.0850773, 0, -0.282465, -0.662, 0.0664336, 23.1992)
+
+[node name="PP_Rock_Pile_Forest_Moss_81" parent="." instance=ExtResource("1_fxdrx")]
+transform = Transform3D(0.190422, 0, -0.225309, 0, 0.295, 0, 0.225309, 0, 0.190422, -0.662, -0.150038, 18.4086)
+
+[node name="PP_Rock_Pile_Forest_Moss_82" parent="." instance=ExtResource("1_fxdrx")]
+transform = Transform3D(-0.282465, 0, -0.0850773, 0, 0.295, 0, 0.0850773, 0, -0.282465, -0.662, -0.0376443, 20.7302)
+
+[node name="PP_Rock_Pile_Forest_Moss_83" parent="." instance=ExtResource("1_fxdrx")]
+transform = Transform3D(-0.0204443, 0, -0.29429, 0, 0.295, 0, 0.29429, 0, -0.0204443, -0.662, 0.0468652, 19.4208)
+
+[node name="PP_Rock_Pile_Forest_Moss_84" parent="." instance=ExtResource("1_fxdrx")]
+transform = Transform3D(0.184667, 0, 0.23005, 0, 0.295, 0, -0.23005, 0, 0.184667, -0.662, -0.0807305, 22.0933)
+
+[node name="PP_Rock_Pile_Forest_Moss_85" parent="." instance=ExtResource("1_fxdrx")]
+transform = Transform3D(-0.117504, 0, 0.270588, 0, 0.295, 0, -0.270588, 0, -0.117504, -0.662, -0.150038, 16.8653)
+
+[node name="PP_Rock_Pile_Forest_Moss_86" parent="." instance=ExtResource("1_fxdrx")]
+transform = Transform3D(-0.282465, 0, -0.0850773, 0, 0.295, 0, 0.0850773, 0, -0.282465, -0.662, 0.0664336, 15.6601)
+
+[node name="PP_Rock_Pile_Forest_Moss_87" parent="." instance=ExtResource("1_fxdrx")]
+transform = Transform3D(0.190422, 0, -0.225309, 0, 0.295, 0, 0.225309, 0, 0.190422, -0.662, -0.150038, 10.8695)
+
+[node name="PP_Rock_Pile_Forest_Moss_88" parent="." instance=ExtResource("1_fxdrx")]
+transform = Transform3D(-0.282465, 0, -0.0850773, 0, 0.295, 0, 0.0850773, 0, -0.282465, -0.662, -0.0376443, 13.1911)
+
+[node name="PP_Rock_Pile_Forest_Moss_89" parent="." instance=ExtResource("1_fxdrx")]
+transform = Transform3D(-0.0204443, 0, -0.29429, 0, 0.295, 0, 0.29429, 0, -0.0204443, -0.662, 0.0468652, 11.8817)
+
+[node name="PP_Rock_Pile_Forest_Moss_90" parent="." instance=ExtResource("1_fxdrx")]
+transform = Transform3D(0.184667, 0, 0.23005, 0, 0.295, 0, -0.23005, 0, 0.184667, -0.662, -0.0807305, 14.5542)
+
+[node name="PP_Rock_Pile_Forest_Moss_91" parent="." instance=ExtResource("1_fxdrx")]
+transform = Transform3D(-0.117504, 0, 0.270588, 0, 0.295, 0, -0.270588, 0, -0.117504, -0.662, -0.150038, 9.31421)
+
+[node name="PP_Rock_Pile_Forest_Moss_92" parent="." instance=ExtResource("1_fxdrx")]
+transform = Transform3D(-0.282465, 0, -0.0850773, 0, 0.295, 0, 0.0850773, 0, -0.282465, -0.662, 0.0664336, 8.10898)
+
+[node name="PP_Rock_Pile_Forest_Moss_93" parent="." instance=ExtResource("1_fxdrx")]
+transform = Transform3D(0.190422, 0, -0.225309, 0, 0.295, 0, 0.225309, 0, 0.190422, -0.662, -0.150038, 3.31841)
+
+[node name="PP_Rock_Pile_Forest_Moss_94" parent="." instance=ExtResource("1_fxdrx")]
+transform = Transform3D(-0.282465, 0, -0.0850773, 0, 0.295, 0, 0.0850773, 0, -0.282465, -0.662, -0.0376443, 5.63999)
+
+[node name="PP_Rock_Pile_Forest_Moss_95" parent="." instance=ExtResource("1_fxdrx")]
+transform = Transform3D(-0.0204443, 0, -0.29429, 0, 0.295, 0, 0.29429, 0, -0.0204443, -0.662, 0.0468652, 4.33053)
+
+[node name="PP_Rock_Pile_Forest_Moss_96" parent="." instance=ExtResource("1_fxdrx")]
+transform = Transform3D(0.184667, 0, 0.23005, 0, 0.295, 0, -0.23005, 0, 0.184667, -0.662, -0.0807305, 7.00311)
+
+[node name="PP_Rock_Pile_Forest_Moss_97" parent="." instance=ExtResource("1_fxdrx")]
+transform = Transform3D(-0.117504, 0, 0.270588, 0, 0.295, 0, -0.270588, 0, -0.117504, -0.662, -0.150038, 1.84261)
+
+[node name="PP_Rock_Pile_Forest_Moss_98" parent="." instance=ExtResource("1_fxdrx")]
+transform = Transform3D(-0.282465, 0, -0.0850773, 0, 0.295, 0, 0.0850773, 0, -0.282465, -0.662, 0.0664336, 0.637378)
+
+[node name="PP_Rock_Pile_Forest_Moss_99" parent="." instance=ExtResource("1_fxdrx")]
+transform = Transform3D(0.190422, 0, -0.225309, 0, 0.295, 0, 0.225309, 0, 0.190422, -0.662, -0.150038, -4.1532)
+
+[node name="PP_Rock_Pile_Forest_Moss_100" parent="." instance=ExtResource("1_fxdrx")]
+transform = Transform3D(-0.282465, 0, -0.0850773, 0, 0.295, 0, 0.0850773, 0, -0.282465, -0.662, -0.0376443, -1.83162)
+
+[node name="PP_Rock_Pile_Forest_Moss_101" parent="." instance=ExtResource("1_fxdrx")]
+transform = Transform3D(-0.0204443, 0, -0.29429, 0, 0.295, 0, 0.29429, 0, -0.0204443, -0.662, 0.0468652, -3.14108)
+
+[node name="PP_Rock_Pile_Forest_Moss_102" parent="." instance=ExtResource("1_fxdrx")]
+transform = Transform3D(0.184667, 0, 0.23005, 0, 0.295, 0, -0.23005, 0, 0.184667, -0.662, -0.0807305, -0.468497)
+
+[node name="PP_Rock_Pile_Forest_Moss_103" parent="." instance=ExtResource("1_fxdrx")]
+transform = Transform3D(-0.117504, 0, 0.270588, 0, 0.295, 0, -0.270588, 0, -0.117504, -0.662, -0.150038, -5.62287)
+
+[node name="PP_Rock_Pile_Forest_Moss_104" parent="." instance=ExtResource("1_fxdrx")]
+transform = Transform3D(-0.282465, 0, -0.0850773, 0, 0.295, 0, 0.0850773, 0, -0.282465, -0.662, 0.0664336, -6.8281)
+
+[node name="PP_Rock_Pile_Forest_Moss_105" parent="." instance=ExtResource("1_fxdrx")]
+transform = Transform3D(0.190422, 0, -0.225309, 0, 0.295, 0, 0.225309, 0, 0.190422, -0.662, -0.150038, -11.6187)
+
+[node name="PP_Rock_Pile_Forest_Moss_106" parent="." instance=ExtResource("1_fxdrx")]
+transform = Transform3D(-0.282465, 0, -0.0850773, 0, 0.295, 0, 0.0850773, 0, -0.282465, -0.662, -0.0376443, -9.2971)
+
+[node name="PP_Rock_Pile_Forest_Moss_107" parent="." instance=ExtResource("1_fxdrx")]
+transform = Transform3D(-0.0204443, 0, -0.29429, 0, 0.295, 0, 0.29429, 0, -0.0204443, -0.662, 0.0468652, -10.6066)
+
+[node name="PP_Rock_Pile_Forest_Moss_108" parent="." instance=ExtResource("1_fxdrx")]
+transform = Transform3D(0.184667, 0, 0.23005, 0, 0.295, 0, -0.23005, 0, 0.184667, -0.662, -0.0807305, -7.93398)
+
+[node name="PP_Rock_Pile_Forest_Moss_109" parent="." instance=ExtResource("1_fxdrx")]
+transform = Transform3D(-0.117504, 0, 0.270588, 0, 0.295, 0, -0.270588, 0, -0.117504, -0.662, -0.150038, -13.1066)
+
+[node name="PP_Rock_Pile_Forest_Moss_110" parent="." instance=ExtResource("1_fxdrx")]
+transform = Transform3D(-0.282465, 0, -0.0850773, 0, 0.295, 0, 0.0850773, 0, -0.282465, -0.662, 0.0664336, -14.3119)
+
+[node name="PP_Rock_Pile_Forest_Moss_111" parent="." instance=ExtResource("1_fxdrx")]
+transform = Transform3D(0.190422, 0, -0.225309, 0, 0.295, 0, 0.225309, 0, 0.190422, -0.662, -0.150038, -19.1024)
+
+[node name="PP_Rock_Pile_Forest_Moss_112" parent="." instance=ExtResource("1_fxdrx")]
+transform = Transform3D(-0.282465, 0, -0.0850773, 0, 0.295, 0, 0.0850773, 0, -0.282465, -0.662, -0.0376443, -16.7809)
+
+[node name="PP_Rock_Pile_Forest_Moss_113" parent="." instance=ExtResource("1_fxdrx")]
+transform = Transform3D(-0.0204443, 0, -0.29429, 0, 0.295, 0, 0.29429, 0, -0.0204443, -0.662, 0.0468652, -18.0903)
+
+[node name="PP_Rock_Pile_Forest_Moss_114" parent="." instance=ExtResource("1_fxdrx")]
+transform = Transform3D(0.184667, 0, 0.23005, 0, 0.295, 0, -0.23005, 0, 0.184667, -0.662, -0.0807305, -15.4177)
+
+[node name="PP_Rock_Pile_Forest_Moss_115" parent="." instance=ExtResource("1_fxdrx")]
+transform = Transform3D(-0.117504, 0, 0.270588, 0, 0.295, 0, -0.270588, 0, -0.117504, -0.662, -0.150038, -20.6798)
+
+[node name="PP_Rock_Pile_Forest_Moss_116" parent="." instance=ExtResource("1_fxdrx")]
+transform = Transform3D(-0.282465, 0, -0.0850773, 0, 0.295, 0, 0.0850773, 0, -0.282465, -0.662, 0.0664336, -21.885)
+
+[node name="PP_Rock_Pile_Forest_Moss_117" parent="." instance=ExtResource("1_fxdrx")]
+transform = Transform3D(0.190422, 0, -0.225309, 0, 0.295, 0, 0.225309, 0, 0.190422, -0.662, -0.150038, -26.6756)
+
+[node name="PP_Rock_Pile_Forest_Moss_118" parent="." instance=ExtResource("1_fxdrx")]
+transform = Transform3D(-0.282465, 0, -0.0850773, 0, 0.295, 0, 0.0850773, 0, -0.282465, -0.662, -0.0376443, -24.354)
+
+[node name="PP_Rock_Pile_Forest_Moss_119" parent="." instance=ExtResource("1_fxdrx")]
+transform = Transform3D(-0.0204443, 0, -0.29429, 0, 0.295, 0, 0.29429, 0, -0.0204443, -0.662, 0.0468652, -25.6635)
+
+[node name="PP_Rock_Pile_Forest_Moss_120" parent="." instance=ExtResource("1_fxdrx")]
+transform = Transform3D(0.184667, 0, 0.23005, 0, 0.295, 0, -0.23005, 0, 0.184667, -0.662, -0.0807305, -22.9909)
+
+[node name="PP_Rock_Pile_Forest_Moss_121" parent="." instance=ExtResource("1_fxdrx")]
+transform = Transform3D(-0.117504, 0, 0.270588, 0, 0.295, 0, -0.270588, 0, -0.117504, -0.662, -0.150038, -28.1635)
+
+[node name="PP_Rock_Pile_Forest_Moss_122" parent="." instance=ExtResource("1_fxdrx")]
+transform = Transform3D(-0.282465, 0, -0.0850773, 0, 0.295, 0, 0.0850773, 0, -0.282465, -0.662, 0.0664336, -29.3688)
+
+[node name="PP_Rock_Pile_Forest_Moss_123" parent="." instance=ExtResource("1_fxdrx")]
+transform = Transform3D(0.190422, 0, -0.225309, 0, 0.295, 0, 0.225309, 0, 0.190422, -0.662, -0.150038, -34.1594)
+
+[node name="PP_Rock_Pile_Forest_Moss_124" parent="." instance=ExtResource("1_fxdrx")]
+transform = Transform3D(-0.282465, 0, -0.0850773, 0, 0.295, 0, 0.0850773, 0, -0.282465, -0.662, -0.0376443, -31.8378)
+
+[node name="PP_Rock_Pile_Forest_Moss_125" parent="." instance=ExtResource("1_fxdrx")]
+transform = Transform3D(-0.0204443, 0, -0.29429, 0, 0.295, 0, 0.29429, 0, -0.0204443, -0.662, 0.0468652, -33.1472)
+
+[node name="PP_Rock_Pile_Forest_Moss_126" parent="." instance=ExtResource("1_fxdrx")]
+transform = Transform3D(0.184667, 0, 0.23005, 0, 0.295, 0, -0.23005, 0, 0.184667, -0.662, -0.0807305, -30.4747)
+
+[node name="PP_Rock_Pile_Forest_Moss_127" parent="." instance=ExtResource("1_fxdrx")]
+transform = Transform3D(-0.117504, 0, 0.270588, 0, 0.295, 0, -0.270588, 0, -0.117504, -0.662, -0.150038, -35.7814)
+
+[node name="PP_Rock_Pile_Forest_Moss_128" parent="." instance=ExtResource("1_fxdrx")]
+transform = Transform3D(-0.282465, 0, -0.0850773, 0, 0.295, 0, 0.0850773, 0, -0.282465, -0.662, 0.0664336, -36.9866)
+
+[node name="PP_Rock_Pile_Forest_Moss_129" parent="." instance=ExtResource("1_fxdrx")]
+transform = Transform3D(0.190422, 0, -0.225309, 0, 0.295, 0, 0.225309, 0, 0.190422, -0.662, -0.150038, -41.7772)
+
+[node name="PP_Rock_Pile_Forest_Moss_130" parent="." instance=ExtResource("1_fxdrx")]
+transform = Transform3D(-0.282465, 0, -0.0850773, 0, 0.295, 0, 0.0850773, 0, -0.282465, -0.662, -0.0376443, -39.4556)
+
+[node name="PP_Rock_Pile_Forest_Moss_131" parent="." instance=ExtResource("1_fxdrx")]
+transform = Transform3D(-0.0204443, 0, -0.29429, 0, 0.295, 0, 0.29429, 0, -0.0204443, -0.662, 0.0468652, -40.7651)
+
+[node name="PP_Rock_Pile_Forest_Moss_132" parent="." instance=ExtResource("1_fxdrx")]
+transform = Transform3D(0.184667, 0, 0.23005, 0, 0.295, 0, -0.23005, 0, 0.184667, -0.662, -0.0807305, -38.0925)
+
+[node name="PP_Rock_Pile_Forest_Moss_133" parent="." instance=ExtResource("1_fxdrx")]
+transform = Transform3D(-0.117504, 0, 0.270588, 0, 0.295, 0, -0.270588, 0, -0.117504, -0.662, -0.150038, -43.2652)
+
+[node name="PP_Rock_Pile_Forest_Moss_134" parent="." instance=ExtResource("1_fxdrx")]
+transform = Transform3D(-0.282465, 0, -0.0850773, 0, 0.295, 0, 0.0850773, 0, -0.282465, -0.662, 0.0664336, -44.4704)
+
+[node name="PP_Rock_Pile_Forest_Moss_135" parent="." instance=ExtResource("1_fxdrx")]
+transform = Transform3D(0.190422, 0, -0.225309, 0, 0.295, 0, 0.225309, 0, 0.190422, -0.662, -0.150038, -49.261)
+
+[node name="PP_Rock_Pile_Forest_Moss_136" parent="." instance=ExtResource("1_fxdrx")]
+transform = Transform3D(-0.282465, 0, -0.0850773, 0, 0.295, 0, 0.0850773, 0, -0.282465, -0.662, -0.0376443, -46.9394)
+
+[node name="PP_Rock_Pile_Forest_Moss_137" parent="." instance=ExtResource("1_fxdrx")]
+transform = Transform3D(-0.0204443, 0, -0.29429, 0, 0.295, 0, 0.29429, 0, -0.0204443, -0.662, 0.0468652, -48.2489)
+
+[node name="PP_Rock_Pile_Forest_Moss_138" parent="." instance=ExtResource("1_fxdrx")]
+transform = Transform3D(0.184667, 0, 0.23005, 0, 0.295, 0, -0.23005, 0, 0.184667, -0.662, -0.0807305, -45.5763)
+
+[node name="PP_Rock_Pile_Forest_Moss_139" parent="." instance=ExtResource("1_fxdrx")]
+transform = Transform3D(-0.117504, 0, 0.270588, 0, 0.295, 0, -0.270588, 0, -0.117504, -0.662, -0.150038, -50.7875)
+
+[node name="PP_Rock_Pile_Forest_Moss_140" parent="." instance=ExtResource("1_fxdrx")]
+transform = Transform3D(-0.282465, 0, -0.0850773, 0, 0.295, 0, 0.0850773, 0, -0.282465, -0.662, 0.0664336, -51.9927)
+
+[node name="PP_Rock_Pile_Forest_Moss_141" parent="." instance=ExtResource("1_fxdrx")]
+transform = Transform3D(0.190422, 0, -0.225309, 0, 0.295, 0, 0.225309, 0, 0.190422, -0.662, -0.150038, -56.7833)
+
+[node name="PP_Rock_Pile_Forest_Moss_142" parent="." instance=ExtResource("1_fxdrx")]
+transform = Transform3D(-0.282465, 0, -0.0850773, 0, 0.295, 0, 0.0850773, 0, -0.282465, -0.662, -0.0376443, -54.4617)
+
+[node name="PP_Rock_Pile_Forest_Moss_143" parent="." instance=ExtResource("1_fxdrx")]
+transform = Transform3D(-0.0204443, 0, -0.29429, 0, 0.295, 0, 0.29429, 0, -0.0204443, -0.662, 0.0468652, -55.7712)
+
+[node name="PP_Rock_Pile_Forest_Moss_144" parent="." instance=ExtResource("1_fxdrx")]
+transform = Transform3D(0.184667, 0, 0.23005, 0, 0.295, 0, -0.23005, 0, 0.184667, -0.662, -0.0807305, -53.0986)

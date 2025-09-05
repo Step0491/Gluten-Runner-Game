@@ -1,0 +1,42 @@
+[gd_scene load_steps=6 format=3 uid="uid://b48mvbd6el3ya"]
+
+[ext_resource type="FontFile" uid="uid://dbov3l412oum1" path="res://materials/Super Lobster.ttf" id="1_daedk"]
+[ext_resource type="Texture2D" uid="uid://bqdi4r03efm15" path="res://materials/40e4425fc69645b70fbe78a1d814ee93-removebg-preview.png" id="2_a0bs8"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_hynd5"]
+texture = ExtResource("2_a0bs8")
+region_rect = Rect2(295, 149.78, 253, 79.25)
+modulate_color = Color(0.776471, 0.776471, 0.776471, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_t2eob"]
+texture = ExtResource("2_a0bs8")
+region_rect = Rect2(295, 149.78, 253, 79.25)
+modulate_color = Color(0.611765, 0.611765, 0.611765, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_xby58"]
+texture = ExtResource("2_a0bs8")
+region_rect = Rect2(295, 149.78, 253, 79.25)
+
+[node name="Button" type="Button"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -88.0
+offset_top = -40.0
+offset_right = 88.0
+offset_bottom = 40.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 3
+theme_override_constants/align_to_largest_stylebox = 1
+theme_override_fonts/font = ExtResource("1_daedk")
+theme_override_font_sizes/font_size = 62
+theme_override_styles/hover = SubResource("StyleBoxTexture_hynd5")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_t2eob")
+theme_override_styles/normal = SubResource("StyleBoxTexture_xby58")
+text = "cibo"

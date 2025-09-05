@@ -1,0 +1,78 @@
+[gd_scene load_steps=9 format=3 uid="uid://dq7ovek6rrd7e"]
+
+[ext_resource type="Script" uid="uid://cubyviji2glxu" path="res://script/food.gd" id="1_ky3wf"]
+[ext_resource type="PackedScene" uid="uid://dfqybpx05h6xw" path="res://Documentazione/Food Pack - Oct 2019/Bacon_Cooked.fbx" id="2_d4up0"]
+[ext_resource type="PackedScene" uid="uid://bw5w0mxsdmi86" path="res://Documentazione/Food Pack - Oct 2019/Egg_Fried.fbx" id="3_8a7y5"]
+[ext_resource type="PackedScene" uid="uid://ckdo1pbcdp8m2" path="res://kitchen gltf items/plate.gltf" id="4_6atsv"]
+[ext_resource type="PackedScene" uid="uid://b48mvbd6el3ya" path="res://scene/food_name_label.tscn" id="5_jwdjf"]
+[ext_resource type="Script" uid="uid://dclanam368oty" path="res://script/food_name_label.gd" id="6_fgesg"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_xlju3"]
+size = Vector3(1.65234, 0.190796, 1.75415)
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_x71w1"]
+viewport_path = NodePath("SubViewport")
+
+[node name="bacon egg" type="Node3D"]
+script = ExtResource("1_ky3wf")
+
+[node name="StaticBody3D2" type="StaticBody3D" parent="."]
+collision_layer = 8
+
+[node name="Bacon_Cooked" parent="StaticBody3D2" instance=ExtResource("2_d4up0")]
+transform = Transform3D(0.965926, -0.258819, 0, 0.258819, 0.965926, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="Bacon_Cooked3" parent="StaticBody3D2" instance=ExtResource("2_d4up0")]
+transform = Transform3D(0.959914, -0.257208, -0.1114, 0.258819, 0.965926, 0, 0.107604, -0.0288324, 0.993776, 0, 0.00656766, 0.135787)
+
+[node name="Bacon_Cooked5" parent="StaticBody3D2" instance=ExtResource("2_d4up0")]
+transform = Transform3D(0.933082, -0.250019, 0.258549, 0.258819, 0.965926, 0, -0.249739, 0.0669174, 0.965998, 0, 7.66516e-05, 0.352117)
+
+[node name="Bacon_Cooked2" parent="StaticBody3D2" instance=ExtResource("2_d4up0")]
+transform = Transform3D(0.840434, -0.225193, -0.49291, 0.258819, 0.965926, 0, 0.476114, -0.127574, 0.870081, -0.0238478, 0.0181067, -0.0340682)
+
+[node name="Bacon_Cooked4" parent="StaticBody3D2" instance=ExtResource("2_d4up0")]
+transform = Transform3D(0.953527, -0.255497, 0.159709, 0.258819, 0.965926, 0, -0.154267, 0.0413357, 0.987164, -0.00498199, 0.025582, 0.233987)
+
+[node name="Egg_Fried" parent="StaticBody3D2" instance=ExtResource("3_8a7y5")]
+transform = Transform3D(-0.47511, -0.320297, -0.819561, -0.203641, 0.946135, -0.251711, 0.856038, 0.0473062, -0.514744, 0.196691, 0.0671364, -0.471261)
+
+[node name="plate2" parent="StaticBody3D2" instance=ExtResource("4_6atsv")]
+transform = Transform3D(1.66622, -0.147527, 0, 0.446463, 0.550578, 0, 0, 0, 1.725, -0.00200772, -0.071649, -0.138366)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D2"]
+transform = Transform3D(0.965926, -0.258819, 0, 0.258819, 0.965926, 0, 0, 0, 1, -0.000920296, 0.0100403, -0.154419)
+shape = SubResource("BoxShape3D_xlju3")
+
+[node name="Area3D" type="Area3D" parent="StaticBody3D2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.32831e-10, 0, 0)
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="StaticBody3D2/Area3D"]
+transform = Transform3D(1.00456, -0.269172, 0, 0.269172, 1.00456, 0, 0, 0, 1.04, -0.000920295, 0.0100403, -0.154419)
+shape = SubResource("BoxShape3D_xlju3")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="StaticBody3D2"]
+transform = Transform3D(4.82963, -1.2941, 0, 1.2941, 4.82963, 0, 0, 0, 5, 0.0619368, -0.207111, 0.00554097)
+light_color = Color(0.839216, 0.839216, 0.313726, 1)
+omni_range = 0.951851
+omni_attenuation = 1.2
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(0.565, -3.25297e-10, 5.7351e-15, 3.75855e-10, 0.489, -2.24027e-17, -5.7351e-15, 1.93892e-17, 0.565, 0.0641074, 0.806469, -0.141604)
+billboard = 1
+texture = SubResource("ViewportTexture_x71w1")
+
+[node name="SubViewport" type="SubViewport" parent="."]
+disable_3d = true
+transparent_bg = true
+anisotropic_filtering_level = 2
+size_2d_override = Vector2i(336, -256)
+
+[node name="Button" parent="SubViewport" instance=ExtResource("5_jwdjf")]
+offset_left = 32.0
+offset_top = 344.0
+offset_right = 176.0
+offset_bottom = 424.0
+script = ExtResource("6_fgesg")
+
+[connection signal="body_entered" from="StaticBody3D2/Area3D" to="." method="_on_area_3d_body_entered"]

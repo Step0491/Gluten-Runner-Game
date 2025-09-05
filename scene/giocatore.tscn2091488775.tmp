@@ -1,0 +1,51 @@
+[gd_scene load_steps=8 format=3 uid="uid://dxqs6kho5u4rt"]
+
+[ext_resource type="Script" uid="uid://d2g268ei5pbe6" path="res://script/giocatore.gd" id="1_seukn"]
+[ext_resource type="PackedScene" uid="uid://bbayhcgtq0si2" path="res://scene/Beach Character.glb" id="3_36hvi"]
+[ext_resource type="PackedScene" uid="uid://cuphavb61y62u" path="res://scene/barravita.tscn" id="3_iqwog"]
+[ext_resource type="AudioStream" uid="uid://p8tsg5r8in2s" path="res://sfx/cartoon-jump-6462.wav" id="4_o00ko"]
+[ext_resource type="AudioStream" uid="uid://ctyb6vnmg5b3v" path="res://sfx/male_hurt7-48124.wav" id="5_sy1u3"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_titnh"]
+height = 1.35658
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_o00ko"]
+viewport_path = NodePath("SubViewport")
+
+[node name="Giocatore" type="CharacterBody3D"]
+transform = Transform3D(-4.99978, 0.0466869, -7.54979e-07, 0.0466869, 4.99978, 4.08151e-09, 7.54984e-07, -2.9682e-09, -5, -1.19209e-07, 0, -0.0120981)
+script = ExtResource("1_seukn")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(2.705, -4.28408e-07, -1.0516e-12, 2.58908e-07, 5.55007, 6.52811e-14, 4.83169e-12, -1.94289e-13, 3.135, 0.0420272, -0.352847, -0.032)
+shape = SubResource("CylinderShape3D_titnh")
+
+[node name="kid" parent="." instance=ExtResource("3_36hvi")]
+transform = Transform3D(4, 3.58553e-16, -2.84217e-13, -3.58553e-16, 4, 3.33067e-15, 2.84217e-13, -3.33067e-15, 4, -0.14455, -3.99118, -0.548472)
+
+[node name="Area3D" type="Area3D" parent="."]
+transform = Transform3D(1.01, 0, 0, 0, 1.01, 0, 0, 0, 1.01, 0, 0, 0)
+collision_mask = 10
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(3.19497, -7.82311e-08, -5.00222e-12, 1.546e-07, 5.69994, 1.82299e-13, 1.03455e-11, -2.41807e-13, 3.41995, -0.00170017, -0.365317, 0)
+shape = SubResource("CylinderShape3D_titnh")
+
+[node name="SubViewport" type="SubViewport" parent="."]
+disable_3d = true
+transparent_bg = true
+
+[node name="ProgressBar" parent="SubViewport" instance=ExtResource("3_iqwog")]
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(1, -9.31323e-10, -5.68434e-14, 9.31322e-10, 1, 2.22045e-16, 4.26326e-14, -4.44089e-16, 1, 0.0377159, 4.03906, 3.49246e-09)
+billboard = 1
+texture = SubResource("ViewportTexture_o00ko")
+
+[node name="JumpAudio" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("4_o00ko")
+
+[node name="DamageAudio" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("5_sy1u3")
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
