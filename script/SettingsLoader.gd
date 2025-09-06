@@ -13,5 +13,5 @@ func apply_volumes(settings: DefaultSettingsResource):
 	var sfx_db = linear_to_db(settings.DEFAULT_SFX_VOLUME)
 
 	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("Master"), master_db)
-	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("Music"), music_db)
-	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("SFX"), sfx_db)
+	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("Musics"), music_db)
+	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("SfxVol"), sfx_db)

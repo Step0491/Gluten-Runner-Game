@@ -32,5 +32,4 @@ theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 4
 theme_override_fonts/font = ExtResource("1_v1ivk")
 theme_override_font_sizes/font_size = 32
-text = "ciaoo"
 autowrap_mode = 3

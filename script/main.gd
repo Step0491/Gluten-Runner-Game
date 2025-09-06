@@ -54,7 +54,7 @@ func _ready():
 	if OS.get_name() == "Android":
 		await get_tree().create_timer(0.1).timeout
 	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("Master"), 0.0)
-	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("Music"), 0.0)
+	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("Musics"), 0.0)
 	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("SfxVol"), 0.0)
 
 	# UI iniziale

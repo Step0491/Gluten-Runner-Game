@@ -1,6 +1,6 @@
 class_name CreditsMenu
 extends Control
-@onready var back_button = $MarginContainer/HBoxContainer/VBoxContainer/Back_button_2 as Button
+@onready var back_button = $MarginContainer/VBoxContainer/Back_button_2 as Button
 
 
 signal exit

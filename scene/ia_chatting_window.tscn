@@ -13,7 +13,7 @@ content_margin_top = 30.0
 content_margin_right = 30.0
 content_margin_bottom = 30.0
 texture = ExtResource("3_vds2d")
-region_rect = Rect2(290.5, 147.5, 261.9, 83.3)
+region_rect = Rect2(290.5, 150.938, 261.9, 79.8623)
 modulate_color = Color(0.641934, 0.641934, 0.641934, 1)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jjniu"]
@@ -22,7 +22,7 @@ content_margin_top = 30.0
 content_margin_right = 30.0
 content_margin_bottom = 30.0
 texture = ExtResource("3_vds2d")
-region_rect = Rect2(290.5, 147.5, 261.9, 83.3)
+region_rect = Rect2(290.5, 150.938, 261.9, 79.8623)
 modulate_color = Color(0.548963, 0.548963, 0.548962, 1)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_vuy33"]
@@ -159,20 +159,20 @@ grow_vertical = 2
 script = ExtResource("1_vds2d")
 
 [node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
 offset_right = 720.0
 offset_bottom = 1280.0
 texture = ExtResource("1_sw8yg")
 
 [node name="Groq_input" type="TextEdit" parent="."]
 custom_minimum_size = Vector2(426.47, 90.21)
-layout_mode = 0
 offset_left = 14.0
-offset_top = 135.0
+offset_top = 119.0
 offset_right = 705.0
-offset_bottom = 264.0
+offset_bottom = 271.0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_constants/outline_size = 4
-theme_override_constants/line_spacing = -3
+theme_override_constants/line_spacing = 17
 theme_override_fonts/font = ExtResource("2_x6x8o")
 theme_override_font_sizes/font_size = 30
 theme_override_styles/normal = SubResource("StyleBoxTexture_hlw0j")
@@ -187,10 +187,11 @@ caret_draw_when_editable_disabled = true
 
 [node name="Groq_button" type="Button" parent="."]
 custom_minimum_size = Vector2(100, 33.32)
+layout_mode = 0
 offset_left = 528.0
-offset_top = 234.0
+offset_top = 242.0
 offset_right = 650.0
-offset_bottom = 278.0
+offset_bottom = 286.0
 size_flags_horizontal = 4
 theme_override_constants/outline_size = 6
 theme_override_fonts/font = ExtResource("2_x6x8o")
@@ -203,6 +204,7 @@ text = "Invia"
 
 [node name="Groq_exit" type="Button" parent="."]
 custom_minimum_size = Vector2(200, 33.32)
+layout_mode = 0
 offset_left = 31.0
 offset_top = 1196.0
 offset_right = 245.0

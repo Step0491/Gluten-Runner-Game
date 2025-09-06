@@ -55,7 +55,10 @@ func _on_groq_button_pressed() -> void:
 
 	# 🔹 Invia al server esterno
 	send_prompt_to_server(
-		"Sei specializzato in alimentazione e celiachia, non rispondere a domande non inerenti, " + user_msg
+		"""Stai parlando a bambini 
+		di 6-10 anni, sii molto sintetico, breve e tanto tanto semplice, devi proporre 
+		soluzioni e alternative precise e non fare drastiche esclusioni, non divagare o 
+		discorsare, scrivi poche righe circa 1-3. Domanda: """ + user_msg + "?"
 	)
 
 	$Groq_input.text = ""

@@ -1,6 +1,6 @@
 class_name ProfileMenu
 extends Control
-@onready var back_button = $MarginContainer/HBoxContainer/VBoxContainer/Back_button_2 as Button
+@onready var back_button = $MarginContainer/VBoxContainer/Back_button_2 as Button
 @onready var name_label = $MarginContainer/VBoxContainer/nome
 @onready var n_partite = $"MarginContainer/VBoxContainer/n partite"
 @onready var tempomax_label = $"MarginContainer/VBoxContainer/tempo max"
