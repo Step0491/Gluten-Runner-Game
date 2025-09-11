@@ -60,6 +60,7 @@ func reset():
 
 # Called when the scene is ready
 func _ready():
+	$".".modulate = "000000"
 	# Ricollega il bottone volume se necessario
 	if not volume_btn.is_connected("pressed", volume_btn._on_pressed):
 		volume_btn.pressed.connect(volume_btn._on_pressed)

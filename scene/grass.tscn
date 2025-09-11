@@ -1,6 +1,6 @@
 [gd_scene load_steps=13 format=3 uid="uid://d2dl031ir42pe"]
 
-[ext_resource type="Script" uid="uid://bqsycidg3o2x4" path="res://script/kitchen_room.gd" id="1_ed4ba"]
+[ext_resource type="Script" uid="uid://bqsycidg3o2x4" path="res://script/world1.gd" id="1_ed4ba"]
 [ext_resource type="PackedScene" uid="uid://drurypy3lpire" path="res://forest/PP_Free_Forest_Unique fbx files/PP_Meadow_Path_05.fbx" id="2_upglj"]
 [ext_resource type="PackedScene" uid="uid://buax02u0w15lr" path="res://forest/PP_Free_Forest_Unique fbx files/PP_Meadow_07.fbx" id="3_evhkj"]
 [ext_resource type="PackedScene" uid="uid://38unowf6xfqg" path="res://forest/PP_Free_Forest_Unique fbx files/PP_Birch_Tree_05.fbx" id="4_2nxpy"]

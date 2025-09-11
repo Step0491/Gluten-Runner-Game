@@ -1,10 +1,10 @@
 extends Node3D
 
 @export var food_name: String
-@onready var food = $"."
-@onready var sprite = food.get_node("Sprite3D")
-@onready var omni = food.get_node("StaticBody3D/OmniLight3D")
-@onready var omni2 = food.get_node("StaticBody3D2/OmniLight3D")
+@onready var food : Node3D = $"."
+@onready var sprite: Sprite3D = food.get_node("Sprite3D")
+@onready var omni : OmniLight3D = food.get_node("StaticBody3D/OmniLight3D")
+@onready var omni2 : OmniLight3D = food.get_node("StaticBody3D2/OmniLight3D")
 
 var speed: float = 4
 var rotation_speed: float = 1.5
@@ -38,9 +38,14 @@ func _physics_process(delta: float) -> void:
 	position.z -= speed * delta
 	rotation.y += rotation_speed * delta
 	if position.z < -5:
-		queue_free()
+		deactivate()
+
+func deactivate():
+	visible = false
+	position = Vector3(0, -1000, 0) # o fuori dallo schermo
 
 func _on_area_3d_body_entered(body: Node3D) -> void:
 	# Quando il cibo viene raccolto, registralo usando il nome dal file .tscn
 	GameStats.register_food(food_name)
-	queue_free()
+	await get_tree().create_timer(0.02).timeout
+	deactivate()

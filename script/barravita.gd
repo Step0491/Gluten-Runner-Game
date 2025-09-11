@@ -1,7 +1,7 @@
 extends ProgressBar
 
-const EMPTY_COLOR := Color("red")
-const FULL_COLOR := Color("green")
+const EMPTY_COLOR :Color= Color("red")
+const FULL_COLOR :Color= Color("green")
 
 func update_color():
 	var t := value / max_value

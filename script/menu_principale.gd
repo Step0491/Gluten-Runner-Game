@@ -36,7 +36,7 @@ func _ready() -> void:
 	$canvas/TextureRect3.visible = true
 	$canvas/AnimationPlayer.play_backwards("visible")
 	$canvas/ColorRect.visible = false
-	await $AnimationPlayer.animation_finished
+	await $canvas/AnimationPlayer.animation_finished
 	
 		
 	await get_tree().create_timer(0.5).timeout

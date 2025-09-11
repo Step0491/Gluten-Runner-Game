@@ -1,7 +1,7 @@
 extends Control
 
-@onready var chat_messages = $PanelContainer/ScrollContainer/VBoxContainer
-@onready var http_request = $HTTPRequestGroq  # 🔹 Assicurati di avere un nodo HTTPRequest nella scena
+@onready var chat_messages : VBoxContainer = $PanelContainer/ScrollContainer/VBoxContainer
+@onready var http_request : HTTPRequest = $HTTPRequestGroq  # 🔹 Assicurati di avere un nodo HTTPRequest nella scena
 
 func _ready() -> void:
 	$AnimationPlayer.play("dark")

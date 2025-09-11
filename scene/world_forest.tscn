@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://cd2r2bd1b14mv"]
+
+[ext_resource type="PackedScene" uid="uid://dg1gu88asy6th" path="res://scene/world_forest.glb" id="1_1xp8c"]
+
+[node name="world_forest" instance=ExtResource("1_1xp8c")]
+
+[node name="PP_Rock_Pile_Forest_Moss_1062" parent="Node3D_001/PP_Rock_Pile_Forest_Moss_73" index="0"]
+lod_bias = 0.001

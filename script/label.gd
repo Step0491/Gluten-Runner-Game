@@ -1,6 +1,6 @@
 extends Label
 
-@onready var score_label = $"."  # Il nodo Label stesso
+@onready var score_label : Label = $"."  # Il nodo Label stesso
 
 var elapsed_time : float = 0.0
 

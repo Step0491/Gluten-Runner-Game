@@ -745,6 +745,7 @@ libraries = {
 }
 
 [node name="TextureRect2" type="TextureButton" parent="canvas"]
+visible = false
 offset_left = 171.0
 offset_top = 1047.0
 offset_right = 720.0
@@ -756,6 +757,7 @@ ignore_texture_size = true
 stretch_mode = 0
 
 [node name="TextureRect3" type="TextureRect" parent="canvas"]
+visible = false
 offset_left = 17.0
 offset_top = 1080.93
 offset_right = 213.0
@@ -790,6 +792,7 @@ libraries = {
 }
 
 [node name="ColorRect" type="ColorRect" parent="canvas"]
+visible = false
 material = SubResource("ShaderMaterial_ehkf3")
 custom_minimum_size = Vector2(68, 72)
 offset_top = 1010.0

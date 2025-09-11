@@ -1,6 +1,6 @@
 extends Node2D
 
-@onready var http_request = $HTTPRequest  # 🔹 Assicurati di avere un nodo HTTPRequest nella scena
+@onready var http_request : HTTPRequest = $HTTPRequest  # 🔹 Assicurati di avere un nodo HTTPRequest nella scena
 
 @onready var prompt: String = """Sei specializzato in celiachia, stai parlando a bambini 
 		di 6-10 anni, sii molto sintetico, breve e tanto tanto semplice, devi proporre 

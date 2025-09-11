@@ -101,7 +101,15 @@ press={
 
 [physics]
 
+2d/run_on_separate_thread=true
+3d/run_on_separate_thread=true
+3d/physics_engine="Jolt Physics"
+jolt_physics_3d/simulation/areas_detect_static_bodies=true
+3d/solver/solver_iterations=8
+2d/solver/solver_iterations=8
 common/vsync/vsync_mode=0
+common/solver/solver_iterations=16
+jolt_physics_extension_3d/collisions/areas_detect_static_bodies=true
 
 [rendering]
 

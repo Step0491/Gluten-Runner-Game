@@ -91,3 +91,15 @@ func reset_entity(e: Node3D):
 	e.food_name = e.scene_file_path.get_file().get_basename()
 	# Invoca una funzione per applicare parametri specifici
 	FoodManager.match_food(e)
+
+
+# Nasconde e resetta tutti gli elementi già spawnati
+func clear_active_entities() -> void:
+	for inst in food_pool:
+		if is_instance_valid(inst):
+			inst.visible = false
+			inst.position = Vector3(0, -1000, 0)
+	for inst in obstacle_pool:
+		if is_instance_valid(inst):
+			inst.visible = false
+			inst.position = Vector3(0, -1000, 0)

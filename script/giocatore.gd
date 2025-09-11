@@ -1,44 +1,63 @@
 extends CharacterBody3D
 
-# Costanti
+# ====================
+# COSTANTI
+# ====================
 const LANES: Array = [-1.4, 0, 1.4]
 const ACCELERATION: float = 0.4
+const SWIPE_LENGTH: float = 15
+const SWIPE_THRESHOLD: float = 15
+const LONG_SWIPE_FACTOR: float = 6 
 
-# SISTEMA TOUCH DELL'AMICO - INIZIO
-var swipeLength = 15
-var startSwipe: Vector2
-var curSwipe: Vector2
-var swiping = false
-var threshold = 15
-var swipeDir = 0
-# SISTEMA TOUCH DELL'AMICO - FINE
-
-# Variabili
+# ====================
+# VARIABILI FISICHE
+# ====================
 var GRAVITY: float = 28.0
 var speed: float = 8.0
 var JUMP_VELOCITY: float = 9.0
 
-var starting_point: Vector3 = Vector3.ZERO	
+var starting_point: Vector3 = Vector3.ZERO
 var current_lane: int = 1
 var target_lane: int = 1
 
 var max_health: int = 100
-var health: int = 100
+@export var health: int = 100
 var is_dead: bool = false
 
 var target_z: float = 0.0
 var z_recovery_speed: float = 10.0
 var max_z_reached: float = 0.0
-var has_jumped: bool = true  # Per gestire il messaggio in salto
-var ok = false 
+var has_jumped: bool = true
+var ok: bool = false
 
-# Segnali
+# ====================
+# SISTEMA TOUCH
+# ====================
+var swiping: bool = false
+var start_swipe: Vector2
+var cur_swipe: Vector2
+var swipe_dir: int = 0
+
+# ====================
+# SEGNALI
+# ====================
 signal hit
 signal food
 signal food_entered
 signal dead
 
-# Funzione chiamata alla morte del personaggio
+# ====================
+# INIZIALIZZAZIONE
+# ====================
+func _ready() -> void:
+	starting_point = global_transform.origin
+	target_z = starting_point.z
+	max_z_reached = starting_point.z
+	add_to_group("player")
+
+# ====================
+# SALUTE
+# ====================
 func die() -> void:
 	if is_dead:
 		return
@@ -47,230 +66,197 @@ func die() -> void:
 	$SubViewport/ProgressBar.hide()
 	get_parent().game_over()
 
-# Aggiorna la barra della salute
 func update_health_bar() -> void:
 	$SubViewport/ProgressBar.value = health
 
-# Ritorna salute corrente
-func life() -> int:
-	return health
-
-# Ricezione danno
 func take_damage(damage: int) -> void:
 	if is_dead:
 		return
-	health -= damage
-	health = clamp(health, 0, max_health)
+	health = clamp(health - damage, 0, max_health)
 	update_health_bar()
 	if health == 0:
 		die()
-		
-func gain_life(point: int) -> void:
-	if is_dead:
-		return
-	if health <100:
-		health += point
-		health = clamp(health, 0, max_health)
-		update_health_bar()
 
-# Inizializzazione
-func _ready() -> void:
-	starting_point = global_transform.origin
-	target_z = starting_point.z
-	max_z_reached = starting_point.z
-	add_to_group("player")
-	
-# Controlla se il cambio corsia è possibile
+func gain_life(point: int) -> void:
+	if is_dead or health >= max_health:
+		return
+	health = clamp(health + point, 0, max_health)
+	update_health_bar()
+
+# ====================
+# UTILITY
+# ====================
 func can_move_to_lane(lane_index: int) -> bool:
 	if lane_index < 0 or lane_index >= LANES.size():
 		return false
-
-	var from = global_transform.origin
-	var to = Vector3(LANES[lane_index], from.y, from.z)
-
+	var from_pos = global_transform.origin
+	var to_pos = Vector3(LANES[lane_index], from_pos.y, from_pos.z)
 	var space_state = get_world_3d().direct_space_state
-	var ray_params = PhysicsRayQueryParameters3D.create(from, to)
+	var ray_params = PhysicsRayQueryParameters3D.create(from_pos, to_pos)
 	ray_params.collision_mask = 0b100  # layer 3
 	ray_params.exclude = [self]
-
-	var result = space_state.intersect_ray(ray_params)
-	return result.is_empty()
-
+	return space_state.intersect_ray(ray_params).is_empty()
 
 func get_swipe_angle(start: Vector2, end: Vector2) -> float:
 	var delta = end - start
-	delta.y *= -1  # Inverti Y per usare un sistema con Y che cresce verso l'alto
-	var angle = rad_to_deg(delta.angle())
-	angle = fmod(angle + 360.0, 360.0)  # Normalizza tra 0–360
-	return angle
+	delta.y *= -1
+	return fmod(rad_to_deg(delta.angle()) + 360.0, 360.0)
 
+func perform_jump() -> void:
+	if is_on_floor():
+		velocity.y = JUMP_VELOCITY
+		$JumpAudio.play()
 
-# SISTEMA TOUCH DELL'AMICO ADATTATO - INIZIO
+# ====================
+# SISTEMA SWIPE MODULARE
+# ====================
+var SWIPE_ACTIONS = [
+	# Angolo min, angolo max, salto?, corsia offset
+	{ "min": 25, "max": 65, "jump": true,  "lane_offset": -1 },
+	{ "min": 115, "max": 155, "jump": true, "lane_offset": 1 },
+	{ "min": 295, "max": 335, "jump": false, "lane_offset": -1 },
+	{ "min": 205, "max": 245, "jump": false, "lane_offset": 1 }
+]
+
 func swipe():
+	var input_pos = get_viewport().get_mouse_position()
 	if Input.is_action_just_pressed("ui_accept") or Input.is_action_just_pressed("press"):
-		if not swiping:
-			swiping = true
-			startSwipe = get_viewport().get_mouse_position()
-
-	if Input.is_action_pressed("ui_accept") or Input.is_action_pressed("press"):
-		if swiping:
-			curSwipe = get_viewport().get_mouse_position()
-			if startSwipe.distance_to(curSwipe) >= swipeLength:
-				var angle = get_swipe_angle(startSwipe, curSwipe)
-				
-				if angle >= 25 and angle <= 65:  # ↗️
-					if is_on_floor():
-						velocity.y = JUMP_VELOCITY
-						$JumpAudio.play()
-					if target_lane > 0:
-						var proposed_lane = target_lane - 1
-						if can_move_to_lane(proposed_lane):
-							target_lane = proposed_lane
-
-				elif angle >= 115 and angle <= 155:  # ↖️
-					if is_on_floor():
-						velocity.y = JUMP_VELOCITY
-						$JumpAudio.play()
-					if target_lane < LANES.size() - 1:
-						var proposed_lane = target_lane + 1
-						if can_move_to_lane(proposed_lane):
-							target_lane = proposed_lane
-
-				elif angle >= 295 and angle <= 335:  # ↘️
-					if not is_on_floor():
-						velocity.y = -JUMP_VELOCITY * 1.2
-					if target_lane > 0:
-						var proposed_lane = target_lane - 1
-						if can_move_to_lane(proposed_lane):
-							target_lane = proposed_lane
-							
-				elif angle >= 205 and angle <= 245:  # ↙️
-					if not is_on_floor():
-						velocity.y = -JUMP_VELOCITY * 1.2
-					if target_lane < LANES.size() - 1:
-						var proposed_lane = target_lane + 1
-						if can_move_to_lane(proposed_lane):
-							target_lane = proposed_lane
-							
-				elif abs(startSwipe.y - curSwipe.y) < threshold:
-					swipeDir = 1 if startSwipe.x < curSwipe.x else -1
-					
-				elif abs(startSwipe.x - curSwipe.x) < threshold:
-					if startSwipe.y > curSwipe.y and is_on_floor():
-						velocity.y = JUMP_VELOCITY
-						$JumpAudio.play()
-					elif startSwipe.y < curSwipe.y and not is_on_floor():
-						velocity.y = -JUMP_VELOCITY * 1.2
-
-				swiping = false
-	else:
+		swiping = true
+		start_swipe = input_pos
+	
+	if swiping and (Input.is_action_pressed("ui_accept") or Input.is_action_pressed("press")):
+		cur_swipe = input_pos
+		var swipe_distance = start_swipe.distance_to(cur_swipe)
+		if swipe_distance >= SWIPE_LENGTH:
+			var angle = get_swipe_angle(start_swipe, cur_swipe)
+			handle_swipe(angle, swipe_distance)
+			swiping = false
+	elif not Input.is_action_pressed("ui_accept") and not Input.is_action_pressed("press"):
 		swiping = false
 
-# SISTEMA TOUCH DELL'AMICO ADATTATO - FINE
+# ====================
+# UTILITY AGGIORNATA
+# ====================
+func change_lane(new_lane: int) -> void:
+	# Clamp tra 0 e 2
+	new_lane = clamp(new_lane, 0, LANES.size() - 1)
+	if new_lane != target_lane and can_move_to_lane(new_lane):
+		target_lane = new_lane
 
-# Movimento fisico
+# ====================
+# SWIPE AGGIORNATO
+# ====================
+func handle_swipe(angle: float, swipe_distance: float) -> void:
+	var dx: float = cur_swipe.x - start_swipe.x
+	var dy: float = cur_swipe.y - start_swipe.y
+	var long_swipe: bool = swipe_distance >= SWIPE_LENGTH * LONG_SWIPE_FACTOR
+
+	# ------------------------
+	# Swipe orizzontale lungo
+	# ------------------------
+	if long_swipe and abs(dx) > abs(dy):
+		var swipe_dir: int = -1 if dx > 0 else 1
+		change_lane(clamp(current_lane + swipe_dir * 2, 0, LANES.size() - 1))
+		return
+
+	# ------------------------
+	# Swipe corto orizzontale
+	# ------------------------
+	if abs(dy) < SWIPE_THRESHOLD and abs(dx) >= SWIPE_THRESHOLD:
+		var swipe_dir: int = -1 if dx > 0 else 1
+		change_lane(clamp(current_lane + swipe_dir, 0, LANES.size() - 1))
+		return
+
+	# ------------------------
+	# Swipe verticale corto
+	# ------------------------
+	if abs(dx) < SWIPE_THRESHOLD and abs(dy) >= SWIPE_THRESHOLD:
+		if dy < 0 and is_on_floor():
+			perform_jump()
+		elif dy > 0 and not is_on_floor():
+			velocity.y = -JUMP_VELOCITY * 1.2
+		return
+
+	# ------------------------
+	# Swipe diagonali modulare (angolo)
+	# ------------------------
+	for action in SWIPE_ACTIONS:
+		if angle >= action.min and angle <= action.max:
+			if action.jump:
+				perform_jump()
+			var lane_offset = action.lane_offset
+			change_lane(clamp(current_lane + lane_offset, 0, LANES.size() - 1))
+			return
+
+
+# ====================
+# PHYSICS PROCESS AGGIORNATO
+# ====================
 func _physics_process(delta: float) -> void:
-	# Aumenti progressivi
+	# Incrementi progressivi
 	GRAVITY += ACCELERATION * delta
 	speed += ACCELERATION / 2 * delta
 	JUMP_VELOCITY += ACCELERATION / 7 * delta
-	
-	# SISTEMA TOUCH DELL'AMICO - CHIAMATA
-	swipe()
-	
+
 	if ok:
-		# CONTROLLI TOUCH - Gestione cambio corsia (CORRETTO)
-		if swipeDir == -1:  # Swipe a destra
-			if target_lane < LANES.size() - 1:
-				var proposed_lane = target_lane + 1
-				if can_move_to_lane(proposed_lane):
-					target_lane = proposed_lane
-			swipeDir = 0
-		elif swipeDir == 1:  # Swipe a sinistra
-			if target_lane > 0:
-				var proposed_lane = target_lane - 1
-				if can_move_to_lane(proposed_lane):
-					target_lane = proposed_lane
-			swipeDir = 0
-		
-		# Cambio corsia a sinistra (tastiera)
-		if Input.is_action_just_pressed("move_left") and target_lane < LANES.size() - 1:
-			var proposed_lane = target_lane + 1
-			if can_move_to_lane(proposed_lane):
-				target_lane = proposed_lane
+		# Input touch
+		swipe()
 
-		# Cambio corsia a destra (tastiera)
-		if Input.is_action_just_pressed("move_right") and target_lane > 0:
-			var proposed_lane = target_lane - 1
-			if can_move_to_lane(proposed_lane):
-				target_lane = proposed_lane
+		# Movimento tastiera
+		if Input.is_action_just_pressed("move_left"):
+			change_lane(current_lane + 1)
+		elif Input.is_action_just_pressed("move_right"):
+			change_lane(current_lane - 1)
 
-		# Movimento laterale verso corsia target
-		var current_x: float = global_transform.origin.x
-		global_transform.origin.x = move_toward(current_x, LANES[target_lane], speed * delta)
+		# Movimento verso target_lane
+		global_transform.origin.x = move_toward(global_transform.origin.x, LANES[target_lane], speed * delta)
+
+		# Aggiorna current_lane quando raggiunta
+		if is_equal_approx(global_transform.origin.x, LANES[target_lane]):
+			current_lane = target_lane
 
 		# Gravità e salto
 		if not is_on_floor():
 			velocity.y -= GRAVITY * delta
-			if Input.is_key_pressed(KEY_C) and has_jumped:
-				has_jumped = false
+			has_jumped = false
 		else:
-			# NON resettare velocity.y se è già stata impostata per il salto
 			if velocity.y <= 0:
 				velocity.y = 0
 			has_jumped = true
+			if Input.is_action_just_pressed("jump"):
+				perform_jump()
 
-		# Salto (tastiera)
-		if is_on_floor() and (Input.is_action_pressed("jump")):
-			velocity.y = JUMP_VELOCITY
-			$JumpAudio.play()
-
-		# Salto verso il basso (tastiera)
+		# Salto verso il basso
 		if not is_on_floor() and (Input.is_action_pressed("down") or Input.is_action_pressed("ui_down")):
 			velocity.y = -JUMP_VELOCITY * 1.2
 
-	# Movimento finale
 	move_and_slide()
 
 	# Ritorno a Z target
-	if target_z > position.z:
-		position.z = move_toward(position.z, target_z, z_recovery_speed * delta)
-		if abs(position.z - target_z) < 0.01:
-			position.z = target_z
+	position.z = move_toward(position.z, max(target_z, max_z_reached), z_recovery_speed * delta)
+	max_z_reached = max(position.z, max_z_reached)
 
-	# Impedisce di tornare indietro nel tempo
-	if position.z > max_z_reached:
-		max_z_reached = position.z
-	elif position.z < max_z_reached:
-		position.z = max_z_reached
-
-	# Animazione sempre in corsa
+	# Animazioni
 	$kid/AnimationPlayer.play("CharacterArmature|Run")
 	$chicken2/AnimationPlayer.play("run")
-	
 
-# Collisioni
+# ====================
+# COLLISIONI
+# ====================
 func _on_area_3d_body_entered(body: Node3D) -> void:
-
 	var collision_body := body as CollisionObject3D
 	var body_layer: int = collision_body.collision_layer
 
-	if body_layer & (1 << 1):  # Layer 2: ostacoli (fanno perdere vita)
+	if body_layer & (1 << 1):  # Ostacoli
 		food_entered.emit(body)
-		if $DamageAudio.playing:
-			$DamageAudio.stop()
-		if not $DamageAudio.playing:
-			$DamageAudio.play()
+		$DamageAudio.play()
 		hit.emit()
-
-	elif body_layer & (1 << 3):  # Layer 4: cibo (recupera vita)
+		print("giocatore collide ostacolo")
+	elif body_layer & (1 << 3):  # Cibo
 		food_entered.emit(body)
-		if $LifeAudio.playing:
-			$LifeAudio.stop()
-		if not $LifeAudio.playing: # Ferma il suono se stava già suonando
-			$LifeAudio.play()   # E lo fa ripartire subito
+		$LifeAudio.play()
 		food.emit()
-
-
+		print("giocatore collide cibo")
+	
 func _on_timer_timeout() -> void:
-	ok=true
+	ok = true

@@ -1,8 +1,8 @@
 extends MeshInstance3D
 
-var offset = 0.0
-var speed = 0.5
-var acceleration=0.018
+var offset : float = 0.0
+var speed :float = 0.5
+var acceleration:float =0.018
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void :
 	speed+= acceleration*delta

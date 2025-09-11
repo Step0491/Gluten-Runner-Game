@@ -1,9 +1,12 @@
 extends Label
 
-@onready var ready_label = $"."  # This Label node
-@onready var anim = $"../AnimationPlayer"
-@onready var countdown_voice = $CountdownVoice
-@onready var timer = $Timer  # A Timer node child of this Label node
+# ---------------------------
+# Nodi onready con tipi espliciti
+# ---------------------------
+@onready var ready_label: Label = $"."  # Questa Label
+@onready var anim: AnimationPlayer = $"../AnimationPlayer"
+@onready var countdown_voice: AudioStreamPlayer3D = $CountdownVoice
+@onready var timer: Timer = $Timer
 
 func wait_time(seconds: float) -> void:
 	timer.stop()

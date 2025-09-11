@@ -1,52 +1,68 @@
 extends Node
 
+# ---------------------------
+# Nodi audio (onready)
+# ---------------------------
 @onready var music_game = $MusicGame
 @onready var music_intro = $music_intro
-# ---------------------------
-# ALTRE COSTANTI
-# ---------------------------
-const explosionred_scene = preload("res://scene/explosionred.tscn")
-const explosiongreen_scene = preload("res://scene/explosiongreen.tscn")
-const explosionblu_scene = preload("res://scene/explosionblu.tscn")
 
-@onready var timer = $"Timer"
-@onready var intro_music = $music_intro
-@onready var game_music = $MusicGame
-@onready var n_food = $n_food
+# ---------------------------
+# COSTANTI: preload scene di effetti (resolte staticamente)
+# ---------------------------
+const EXPLOSION_RED_SCENE   : PackedScene = preload("res://scene/explosionred.tscn")
+const EXPLOSION_GREEN_SCENE : PackedScene = preload("res://scene/explosiongreen.tscn")
+const EXPLOSION_BLU_SCENE   : PackedScene = preload("res://scene/explosionblu.tscn")
+
+# ---------------------------
+# other onready / exported
+# ---------------------------
+@onready var timer         = $"Timer"
+@onready var intro_music   = $music_intro
+@onready var game_music    = $MusicGame
+@onready var n_food        = $n_food
 
 @export var max_score: int = 0
 @export var num_partite: int = 0
 
-
+# ---------------------------
+# Variabili di stato
+# ---------------------------
 var cache: Dictionary = {}
-var print_timer = 0
-var acceleration_obst = 0.2
-var speed_obst = 4
-var timer_decrease = 0.013
-var obst_damage = 50
-var life_point = 10
+var print_timer: int = 0
+var acceleration_obst: float = 0.2
+var speed_obst: float = 4
+var timer_decrease: float = 0.013
+var obst_damage: int = 50
+var life_point: int = 10
+
 enum lv { colazione, pranzo, cena }
+
 const MIN_WAIT_TIME := 0.4
-var total_elapsed_time := 0.0
-var count = 0
+var total_elapsed_time: float = 0.0
+var count: int = 0
 var collected_food_names: Array = []
-var count_food = 0
+var count_food: int = 0
 
 # ---------------------------
-# POOL
+# POOL (cache helper)
 # ---------------------------
-
 func load_cached(path: String) -> PackedScene:
+	# restituisce PackedScene dalla cache o la carica e salva nella cache
 	if cache.has(path):
-		return cache[path]
+		return cache[path] as PackedScene
+	var res = ResourceLoader.load(path)
+	if res and res is PackedScene:
+		cache[path] = res
+		return res
+	# fallback: tenta load come ultima risorsa
 	var scene = load(path)
-	if scene:
+	if scene and scene is PackedScene:
 		cache[path] = scene
-	return scene
+		return scene
+	return null
 
 func _ready():
-				
-	# Inizializza i pool all'avvio
+	# Inizializza i pool all'avvio (stesse chiamate originali)
 	PoolManager.init_obstacle_pool(FoodManager.get_current_obstacle_list(GameState.lv_corrente))
 	PoolManager.init_food_pool(FoodManager.get_current_food_list(GameState.lv_corrente))
 
@@ -57,7 +73,7 @@ func _ready():
 	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("Musics"), 0.0)
 	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("SfxVol"), 0.0)
 
-	# UI iniziale
+	# UI iniziale (nessuna modifica alla grafica / animazioni)
 	$Canvasblack/BlackBackground.modulate.a = 1.0
 	$Canvasblack.visible = true
 	$AnimationPlayer.play("dark_main")
@@ -80,7 +96,6 @@ func _ready():
 	timer.start()
 	music_game.play()
 
-
 # Funzione per ottenere un ostacolo dal pool
 func get_pooled_obstacle(obstacles: Array) -> Node3D:
 	return PoolManager.get_pooled_obstacle(obstacles)
@@ -89,8 +104,9 @@ func get_pooled_obstacle(obstacles: Array) -> Node3D:
 func get_pooled_food(foods: Array) -> Node3D:
 	return PoolManager.get_pooled_food(foods)
 
-func return_pooled_entity(e: Node3D):
-	if not is_instance_valid(e): return
+func return_pooled_entity(e: Node3D) -> void:
+	if not is_instance_valid(e):
+		return
 	e.visible = false
 	e.position.x = 0
 	e.position.z = -1000
@@ -126,13 +142,12 @@ func spawn_random_objects(object_list: Array, count: int, used_positions: Array,
 
 		used_positions.append(Vector2(x, z))
 
-
 func _on_timer_timeout() -> void:
 	total_elapsed_time += timer.wait_time
 	var game_stage : int = clamp(int(total_elapsed_time / 15), 0, 10)
 
 	if count > 2:
-		var new_wait_time : float = 1.5 - (game_stage * 0.1)  # Fixing type inference
+		var new_wait_time : float = 1.5 - (game_stage * 0.1)
 		timer.wait_time = clamp(new_wait_time, MIN_WAIT_TIME, 1.5)
 		count = 0
 	count += 1
@@ -194,11 +209,13 @@ func find_free_x(used_positions: Array, z: float) -> float:
 				break
 		if not conflict:
 			return x
-	return 0.0  # Nessuna posizione libera
+	# se non trova pos libera, ritorna null (gestito dai caller)
+	return 0.0
 
 # Gestione eventi di Game Over
 func game_over() -> void:
-	var expl = explosionred_scene.instantiate()
+	timer.stop()
+	var expl = EXPLOSION_RED_SCENE.instantiate()
 	expl.position = $Giocatore.position
 	add_child(expl)
 	expl.emitting = true
@@ -220,13 +237,12 @@ func game_over() -> void:
 	await get_tree().create_timer(2).timeout
 	$Canvasblack/GameOver.visible = false
 	GameStats.compute_estimated_quality_from_bad_list()
-	
+	PoolManager.clear_active_entities()  # 👈 ripulisce subito ostacoli/cibo
 	# Aggiorna UserStats
 	UserStats.aggiorna_statistiche(int($scoree.text), int(GameStats.Good), int(GameStats.Bad), GameStats.collected_food)
 
 	# Salva subito per non perdere i dati
 	UserStats.salva_statistiche()
-
 	
 	get_tree().change_scene_to_file("res://scene/summary_screen.tscn")
 
@@ -234,6 +250,7 @@ func game_over() -> void:
 func _on_button_pressed() -> void:
 	if not get_tree().paused:
 		get_tree().paused = true
+		$menu_pausa/PauseMenu.visible=true
 		$tasto_pausa/AnimationPlayer.play("visible")
 		$menu_pausa/PauseMenu/AnimationPlayer.play("blur")
 		$volume_button/ColorRect.visible = true
@@ -266,7 +283,8 @@ func _on_info_btn_pressed() -> void:
 		#await $TutorialOverlay/AnimationTree.animation_finished
 		#$TutorialOverlay/slide05.visible = false
 
-		#slide 1
+
+		# slide 1
 		$TutorialOverlay/slide1.visible = true
 		$TutorialOverlay/AnimationTree.play("visible")
 		await get_tree().create_timer(2).timeout
@@ -280,24 +298,23 @@ func _on_info_btn_pressed() -> void:
 func _on_giocatore_hit() -> void:
 	await get_tree().process_frame
 	$Giocatore.take_damage(obst_damage)
-	if($Giocatore.life()>0):
-		var expl = explosionblu_scene.instantiate()
+	if $Giocatore.health > 0:
+		var expl = EXPLOSION_BLU_SCENE.instantiate()
 		expl.position = $Giocatore.position
 		expl.position.z += 0.2
 		add_child(expl)
 		expl.emitting = true
 
-
 func _on_giocatore_food() -> void:
 	$Giocatore.gain_life(life_point)
-	var expl = explosiongreen_scene.instantiate()
+	var expl = EXPLOSION_GREEN_SCENE.instantiate()
 	expl.position = $Giocatore.position
 	expl.position.z += 0.2
 	add_child(expl)
 	expl.emitting = true
 	
 func _on_giocatore_dead() -> void:
-	var expl = explosionred_scene.instantiate()
+	var expl = EXPLOSION_RED_SCENE.instantiate()
 	expl.position = $Giocatore.position
 	add_child(expl)
 	expl.emitting = true

@@ -47,7 +47,7 @@ omni_range = 0.951851
 omni_attenuation = 1.2
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
-transform = Transform3D(0.095, -5.45489e-11, 9.64308e-16, 6.31969e-11, 0.082, -3.76683e-18, -9.64308e-16, 3.25137e-18, 0.095, -0.099502, -1.10364, 0.128948)
+transform = Transform3D(0.095, -5.45489e-11, 9.64308e-16, 6.31969e-11, 0.082, -3.76683e-18, -9.64308e-16, 3.25137e-18, 0.095, -0.0121962, 0.14745, 0.0060046)
 billboard = 1
 texture = SubResource("ViewportTexture_ia0v2")
 

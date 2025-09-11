@@ -17,7 +17,7 @@ func resume():
 	$"../../volume_button/ColorRect".visible=false
 	$"../../info/ColorRect".visible=false
 	$"../../skin_button/ColorRect".visible=false
-	
+	$".".visible=false
 func pause():
 	get_tree().paused = true
 	$AnimationPlayer.play("blur")

@@ -166,6 +166,7 @@ texture = ExtResource("1_sw8yg")
 
 [node name="Groq_input" type="TextEdit" parent="."]
 custom_minimum_size = Vector2(426.47, 90.21)
+layout_mode = 0
 offset_left = 14.0
 offset_top = 119.0
 offset_right = 705.0
